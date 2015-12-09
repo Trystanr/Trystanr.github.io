@@ -1,3 +1,1 @@
-# Trystanr.github.io
-
-#Trystan Rivers
+# [Trystanr.Github.IO](trystanr.github.io)
