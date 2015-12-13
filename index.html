@@ -8,6 +8,29 @@
     	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 		<link rel="stylesheet" type="text/css" href="examples.css" />
 
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+		<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+		<script type="text/javascript" src="examples.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$('#fullpage').fullpage({
+					
+					anchors: ['', 'about', 'work', 'team', 'contact', 'contact'],
+	                navigation: true,
+	                navigationPosition: 'left',
+
+					menu: '#menu',
+					scrollingSpeed: 1000
+				});
+
+
+			});
+		</script>
+
 		<script type="text/javascript">
 			function begin()
 			{
@@ -155,32 +178,43 @@
 		    	background-color: rgba(0,0,0,0.2);
 		    }
 
+		    .work-cont {
+		    	
+		    	background-color: red;
+		    	width: 600px;
+
+		    	
+		    }
+
+		    .work-item {
+		    	padding-top: 200px;
+		    	padding-bottom: 200px;
+
+		    	border-top: 1px black solid;
+
+		    	float: left;
+		    	width: 98px;
+
+		    	-webkit-transition: all 0.5s ease-in-out;
+			    -moz-transition: all 0.5s ease-in-out;
+			    -o-transition: all 0.5s ease-in-out;
+			    transition: all 0.5s ease-in-out;
+		    }
+
+		    .work-item:hover {
+		    	background-color: rgba(0,0,0,0.2);
+		    	padding-bottom: 100px;
+		    	padding-top: 100px;
+
+		    	-webkit-transition: all 0.5s ease-in-out;
+			    -moz-transition: all 0.5s ease-in-out;
+			    -o-transition: all 0.5s ease-in-out;
+			    transition: all 0.5s ease-in-out;
+		    }
+
 		</style>
 
 		<link rel="stylesheet" type="text/css" href="css/nightMode.css">
-
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-
-		<script type="text/javascript" src="js/jquery.fullPage.js"></script>
-		<script type="text/javascript" src="examples.js"></script>
-
-		<script type="text/javascript">
-			$(document).ready(function() {
-
-				$('#fullpage').fullpage({
-					
-					anchors: ['', 'about', 'work', 'team', 'contact', 'contact'],
-	                navigation: true,
-	                navigationPosition: 'left',
-
-					menu: '#menu',
-					scrollingSpeed: 1000
-				});
-
-
-			});
-		</script>
 
 	</head>
 
@@ -206,8 +240,18 @@
 			    <h1 class="foregroundC">About</h1>
 			</div>
 
-			<div class="section playerImage" id="section2">
-		        <h1 class="foregroundC">Work</h1>
+			<div class="section" id="section2">
+
+
+		        <div class="work-cont center foregroundC">
+		        	<div class="work-item foregroundC">websites</div>
+		        	<div class="work-item foregroundC">websites</div>
+		        	<div class="work-item foregroundC">websites</div>
+		        	<div class="work-item foregroundC">websites</div>
+		        	<div class="work-item foregroundC">websites</div>
+		        	<div class="work-item foregroundC">websites</div>	
+		        </div>
+
 		    </div>
 
 		    <div class="section playerImage" id="section3">
