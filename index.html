@@ -5,6 +5,9 @@
 		<meta name="description" content="">
     	<meta name="author" content="Trystan Rivers">
 
+    	<link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+		<link rel="stylesheet" type="text/css" href="examples.css" />
+
 		<script type="text/javascript">
 			function begin()
 			{
@@ -90,7 +93,6 @@
 		</script>
 
 		<style type="text/css">
-
 			body {
 		    	font-family: 'Roboto-Thin', Segoe UI;
 
@@ -101,6 +103,11 @@
 		    @font-face {
 		    	font-family:"Roboto-Thin";
 		    	src: url("Roboto/Roboto-Thin.ttf") /* EOT file for IE */
+			}
+
+			@font-face {
+		    	font-family:"Roboto-Light";
+		    	src: url("Roboto/Roboto-Light.ttf") /* EOT file for IE */
 			}
 
 		    .center {
@@ -121,117 +128,98 @@
 		    	padding: 10px;
 		    }
 
-		    #nightmode {
-			   position:absolute;
-			   top:0;
-			   right:0;
+		    .nav-container {
+		    	width: 808px;
+		    	height: 50px;
 
-			   width: 20px;
-			   height: 20px;
-
-			   margin-right: 10px;
-			   margin-top: 10px;
-
-			   padding: 10px;
-			   background-color: #2c3e50;
-			   border-radius: 5px;
+		    	margin-top: 40px;
 		    }
 
-		    #nightmode:hover { 
-		    	cursor: pointer; 
-		    	opacity: 0.9;
-		    }
+		    .nav-item {
+		    	width: 150px;
+		    	margin-left: 25px;
+		    	margin-right: 25px;
 
-		    
-
-		    .header-bar {
-		    	margin-top: 50px;
-		    	width: 620px;
-		    	height: 252px;
-
-		    	background-color: #ecf0f1;
-
-		    	border-top-left-radius: 200px;
-				border-bottom-left-radius: 200px; 
-		    }
-
-		    .head-image {
-		    	width: 250px;
-		    	height: 250px;
-
+		    	padding-top: 10px;
+		    	padding-bottom: 10px; 
 		    	float: left;
-		    	display: block;
 
-		    	border-top-left-radius: 200px;
-				border-bottom-left-radius: 200px; 
+		    	font-size: 20px;
+		    	text-align: center;
 
-				border-left: solid #2c3e50 1px;
-				border-top: solid #2c3e50 1px;
-				border-bottom: solid #2c3e50 1px;
+		    	border:1px black solid;
+
+		    	font-family:"Roboto-Light";
 		    }
 
-		    .header-hero {
-		    	float: right;
-		    	display: block;
-
-		    	height: 250px;
-		    	width: 368px;
-
-		    	border-right: solid #2c3e50 1px;
-				border-top: solid #2c3e50 1px;
-				border-bottom: solid #2c3e50 1px;
-
-				background-color: transparent;
-
-		    }
-
-
-		    .backgroundC {
-		    	-webkit-transition: all 0.5s ease;
-			    -moz-transition: all 0.5s ease;
-			    -o-transition: all 0.5s ease;
-			    transition: all 0.5s ease;
-		    }
-
-		    .backgroundNight {
-		    	background-color: #2c3e50;
-
-		    	-webkit-transition: all 0.5s ease;
-			    -moz-transition: all 0.5s ease;
-			    -o-transition: all 0.5s ease;
-			    transition: all 0.5s ease;
-		    }
-
-		    .foregroundC {
-		    	-webkit-transition: all 0.5s ease;
-			    -moz-transition: all 0.5s ease;
-			    -o-transition: all 0.5s ease;
-			    transition: all 0.5s ease;
-		    }
-
-		    .foregroundNight {
-		    	color: #ecf0f1;
-		    	border-color: #ecf0f1;
-		    	
-		    	-webkit-transition: all 0.5s ease;
-			    -moz-transition: all 0.5s ease;
-			    -o-transition: all 0.5s ease;
-			    transition: all 0.5s ease;
+		    .nav-item:hover {
+		    	background-color: rgba(0,0,0,0.1);
 		    }
 
 		</style>
+
+		<link rel="stylesheet" type="text/css" href="css/nightMode.css">
+
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+
+		<script type="text/javascript" src="js/jquery.fullPage.js"></script>
+		<script type="text/javascript" src="examples.js"></script>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+
+				$('#fullpage').fullpage({
+					
+					anchors: ['', 'about', 'work', 'team', 'contact', 'contact'],
+	                navigation: true,
+	                navigationPosition: 'left',
+
+					menu: '#menu',
+					scrollingSpeed: 1000
+				});
+
+
+			});
+		</script>
 
 	</head>
 
 	<body class="backgroundC" onload="begin()">
 		<img id="nightmode" src="img/moon-white.png" onclick="toggleMode()">
-		<div  class="head-title center foregroundC" >Trystan Rivers</div>
+		
 
-		<div class="center header-bar ">
-			<img src="img/flat-suit.png" class="head-image foregroundC backgroundC">
-			<div class="foregroundC backgroundC header-hero">Hello, I am Trystan Rivers</div>
+		
+
+		<div id="fullpage">
+
+			<div class="section title" id="section0">
+				<div  class="head-title center foregroundC" >Trystan Rivers</div>
+				<div class="nav-container center">
+					<a href="#about" class="nav-item foregroundC">about</a>
+					<a href="#work" class="nav-item foregroundC">work</a>
+					<a href="#team" class="nav-item foregroundC">team</a>
+					<a href="#contact" class="nav-item foregroundC">contact</a>
+				</div>
+			</div>
+
+			<div class="section playerImage" id="section1">
+			    <h1 class="foregroundC">About</h1>
+			</div>
+
+			<div class="section playerImage" id="section2">
+		        <h1 class="foregroundC">Work</h1>
+		    </div>
+
+		    <div class="section playerImage" id="section3">
+		        <h1 class="foregroundC">Team</h1>
+		    </div>
+
+		    <div class="section playerImage" id="section4">
+		        <h1 class="foregroundC">Contact</h1>
+		    </div>
+
 		</div>
-
 
 
 		<script type="text/javascript" src="js/suncalc.js"></script>
