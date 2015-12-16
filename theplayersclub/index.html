@@ -61,24 +61,20 @@
 		}
 
         #section1 {
-            background: url(img/1.jpg) no-repeat center center; 
-            background-size: cover;
+            background: url(img/1.png) no-repeat center center; 
+            background-size: auto 100vh;
         }
 
         #section2 {
-            background: url(img/2.jpg) no-repeat center center; 
-            background-size: cover;
+            background: url(img/2.png) no-repeat center center; 
+            background-size: auto 100vh;
+         
         }
 
         #section3 {
-            background: url(img/3.png) no-repeat left center; 
+            background: url(img/3.png) no-repeat center center; 
             background-size: auto 100vh;
             color: black;
-        }
-
-        #section4 {
-            background: url(img/4.jpg) no-repeat center center; 
-            background-size: cover;
         }
 
         .container {
@@ -125,11 +121,11 @@
 		$(document).ready(function() {
 
 			$('#fullpage').fullpage({
-				sectionsColor: ['#FFF', '#4BBFC3', '#7BAABE', '#fff'],
-				anchors: ['title', 'furman', 'khumalo', 'gaxa', 'jordan', 'contact'],
+				sectionsColor: ['#FFF', '#fff', '#fff', '#fff'],
+				anchors: ['title', 'furman', 'khumalo', 'gaxa',  'contact'],
                 navigation: true,
                 navigationPosition: 'left',
-                navigationTooltips: ['', 'Dean Furman', 'Bongani Khumalo','Siboniso Gaxa', 'Liam Jordan'],
+                navigationTooltips: ['', 'Dean Furman', 'Bongani Khumalo','Siboniso Gaxa'],
 				menu: '#menu',
 				scrollingSpeed: 1000
 			});
@@ -144,28 +140,25 @@
 <div id="fullpage">
 
 	<div class="section title" id="section0">
-		<h1>The Players Club</h1>
-		<p>Glyn Binkin</p>
+
+        <img src="img/PLAYERS CLUB LOGO.JPG" style="width:50%;">
+		
 		
 	</div>
 
 	<div class="section playerImage" id="section1">
-	    <h1>Furman</h1>
+	    
 	</div>
 
 	<div class="section playerImage" id="section2">
-        <h1>Khumalo</h1>
+        
     </div>
 
 	<div class="section playerImage" id="section3">
-        <h1 style="margin-left:20vw;">Gaxa</h1>
+        
     </div>
 
-    <div class="section playerImage" id="section4">
-        <h1>Jordan</h1>
-    </div>
-
-    <div class="section" id="section5">
+    <div class="section" id="section4">
         <div class="container">
             <a href="https://twitter.com/Glyn_Binkin">
                 <img src="img/icn/twitter.png" class="cont-img">
