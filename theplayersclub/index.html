@@ -71,8 +71,9 @@
         }
 
         #section3 {
-            background: url(img/3.jpg) no-repeat center center; 
-            background-size: cover;
+            background: url(img/3.png) no-repeat left center; 
+            background-size: auto 100vh;
+            color: black;
         }
 
         #section4 {
@@ -124,7 +125,7 @@
 		$(document).ready(function() {
 
 			$('#fullpage').fullpage({
-				sectionsColor: ['#FFF', '#4BBFC3', '#7BAABE', '#f1c40f'],
+				sectionsColor: ['#FFF', '#4BBFC3', '#7BAABE', '#fff'],
 				anchors: ['title', 'furman', 'khumalo', 'gaxa', 'jordan', 'contact'],
                 navigation: true,
                 navigationPosition: 'left',
@@ -157,7 +158,7 @@
     </div>
 
 	<div class="section playerImage" id="section3">
-        <h1>Gaxa</h1>
+        <h1 style="margin-left:20vw;">Gaxa</h1>
     </div>
 
     <div class="section playerImage" id="section4">
