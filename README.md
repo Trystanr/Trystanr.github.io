@@ -5,3 +5,5 @@
 * [The Players Club](http://trystanr.github.io/theplayersclub/index)
 
 * [Breaking Bad](http://trystanr.github.io/self/bb/index)
+
+* [Breaking Bad](http://trystanr.github.io/self/bb/index)
