@@ -1,16 +1,25 @@
-function begin()
-            {
-                document.getElementById("hideAll").style.display = "none";
-                
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(showPosition);
 
-                }   else {
-
-                }
-            }
 
             var bNightMode = false;
+
+            function getCookie(name) {
+                var dc = document.cookie;
+                var prefix = name + "=";
+                var begin = dc.indexOf("; " + prefix);
+                if (begin == -1) {
+                    begin = dc.indexOf(prefix);
+                    if (begin != 0) return null;
+                }
+                else
+                {
+                    begin += 2;
+                    var end = document.cookie.indexOf(";", begin);
+                    if (end == -1) {
+                    end = dc.length;
+                    }
+                }
+                return unescape(dc.substring(begin + prefix.length, end));
+            }
 
             function showPosition(position) {
 
@@ -96,5 +105,25 @@ function begin()
                     for (i = 0; i < x.length; i++) {
                         x[i].classList.add("backgroundText");
                     }
+                }
+            }
+
+            function begin()
+            {
+                var myCookie = getCookie("trystanRiversNightMode");
+
+                if (myCookie == null) {
+                    // do cookie doesn't exist stuff;
+                    document.getElementById("hideAll").style.display = "none";
+                }
+                else {
+                    // do cookie exists stuff
+                }
+
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(showPosition);
+
+                }   else {
+
                 }
             }
