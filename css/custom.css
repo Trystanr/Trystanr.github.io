@@ -21,6 +21,17 @@
 		    	display: block;
 		    }
 
+		    #hideAll {
+			   position: fixed;
+			   left: 0px; 
+			   right: 0px; 
+			   top: 0px; 
+			   bottom: 0px; 
+			   background-color: white;
+			   z-index: 99; /* Higher than anything else in the document */
+
+			 }
+
 		    .head-title {
 		    	width: 50vw;
 		    	font-size: 8vw;
@@ -144,6 +155,28 @@
 
 			    object-fit: cover;
 		    }
+
+		    .project-header {
+		    	width: 15vw;
+		    	height: 3vw;
+
+		    	font-size: 1.8vw;
+		    	text-align: center;
+
+		    	margin: .5vw;
+		    	line-height: 3vw;
+		    	vertical-align: middle;
+		    	
+		    	display: block;
+		    	float: left;
+
+		    	outline: solid #2c3e50 1px;
+
+		    	overflow: hidden;
+
+		    	position: relative;
+		    }
+
 
 		    .project-slider {
 		    	z-index: 1;

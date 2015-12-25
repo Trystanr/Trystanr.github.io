@@ -10,6 +10,7 @@
 		<script src="js/nightmode.js"></script>
 
 		<script type="text/javascript">
+			
 
 			function scrollTo(elementScroll) {
 				$('html, body').animate({
@@ -25,6 +26,13 @@
 	</head>
 
 	<body class="backgroundC" onload="begin()">
+		
+		<div style="display: none" id="hideAll">&nbsp;</div>
+
+		<script type="text/javascript">
+   			document.getElementById("hideAll").style.display = "block";
+ 		</script>
+
 		<img id="nightmode" src="img/moon-white.png" onclick="toggleMode()">
 		
 
@@ -79,6 +87,12 @@
 	
 				<div class="project-cont">
 					
+					
+					<div class="project-header foregroundC">Websites</div>
+					<div class="project-header foregroundC">Graphics</div>
+					<div class="project-header foregroundC">Art</div>
+					<div class="project-header foregroundC">Other?</div>
+
 					<div class="project-box foregroundC">
 						<img src="self\stb\img\2211-Michelson copy.jpg" class="project-image">
 						<div class="project-slider">
