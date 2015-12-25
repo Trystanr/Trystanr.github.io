@@ -44,17 +44,18 @@
 
                 if ((parseInt(sunrise, 10) < parseInt(timeNow, 10))&&(parseInt(timeNow, 10) < parseInt(sunset, 10))) {
                     //sun is up
-                    setCookie("trystanRiversNightMode", "false", 365);
+                    
                 } else {
                     //sun is down   
                     toggleMode();
-                    setCookie("trystanRiversNightMode", "true", 365);
+                    
                 }    
             }
 
             function toggleMode() {
                 if (bNightMode) {
                     bNightMode = false;
+                    setCookie("trystanRiversNightMode", "false", 365);
 
                     document.getElementById("nightmode").src="img/moon-white.png";
                     document.getElementById("nightmode").style.backgroundColor = "#2c3e50";
@@ -81,6 +82,7 @@
 
                 } else {
                     bNightMode = true;
+                    setCookie("trystanRiversNightMode", "true", 365);
 
                     document.getElementById("nightmode").src="img/moon-black.png";
                     document.getElementById("nightmode").style.backgroundColor = "#ecf0f1";
@@ -128,7 +130,7 @@
                             if (bWasNight=="true") {
                                 toggleMode();
                             } else {
-                                
+
                             }
                            
 
