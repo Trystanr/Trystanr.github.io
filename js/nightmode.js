@@ -125,10 +125,15 @@
                         bNightMode = false;
 
                         if (bWasNight != "") {
-                            alert("Night mode");
-                            toggleMode;
+                            if (bWasNight=="true") {
+                                toggleMode();
+                            } else {
+                                
+                            }
+                           
 
                         } else {
+                            alert(bWasNight);
                             setCookie("trystanRiversNightMode", "false", 365);
                         }
 
