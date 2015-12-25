@@ -135,7 +135,6 @@
                            
 
                         } else {
-                            alert(bWasNight);
                             setCookie("trystanRiversNightMode", "false", 365);
                         }
 
