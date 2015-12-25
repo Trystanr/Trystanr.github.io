@@ -90,6 +90,13 @@
 					}
 				}
 			}
+
+			function scrollTo(elementScroll) {
+				$('html, body').animate({
+				    scrollTop: $(elementScroll).offset().top-100
+				}, 1000);
+			}
+
 		</script>
 
 		<style type="text/css">
@@ -149,6 +156,7 @@
 		    	outline:1px #2c3e50 solid;
 
 		    	font-family:"Roboto-Light";
+		    	cursor: pointer;
 		    }
 
 		    .nav-item:hover {
@@ -184,6 +192,11 @@
 				text-decoration: none;
 
 				border-radius: 10px;
+				cursor: pointer;
+
+				border: solid #ecf0f1 1px;
+
+				margin-right: 5px;
 			}
 
 		</style>
@@ -205,10 +218,10 @@
 				<div  class="head-title center foregroundC" >Trystan Rivers</div>
 
 				<div class="nav-container center">
-					<a href="#about" class="nav-item foregroundC">about</a>
-					<a href="#work" class="nav-item foregroundC">work</a>
-					<a href="#team" class="nav-item foregroundC">team</a>
-					<a href="#contact" class="nav-item foregroundC">contact</a>
+					<a onclick="scrollTo('#about')" class="nav-item foregroundC">about</a>
+					<a onclick="scrollTo('#work')" class="nav-item foregroundC">work</a>
+					<a onclick="scrollTo('#team')" class="nav-item foregroundC">team</a>
+					<a onclick="scrollTo('#contact')" class="nav-item foregroundC">contact</a>
 				</div>
 
 			</div>
@@ -217,35 +230,35 @@
 			    <h1 class="foregroundC">About</h1>
 
 			    <div id="aboutPara">
-				    <p style="text-align:left">
+				    <p style="text-align:left" class="foregroundC">
 						Hi, I'm Trystan.
 				    </p>
 
 				 
 
-				    <p style="margin-left=10vw;line-height:200%;">
-				    	My talents include (but aren't limited to) 
-				    	<a href="www.google.com" class="talent-box">programming</a>, 
-				    	<a href="www.google.com" class="talent-box">visual-design</a>, 
-				    	<a href="www.google.com" class="talent-box">UI/UX-design</a>, 
+				    <p style="margin-left=10vw;line-height:200%;" class="foregroundC">
+				    	My talents include (but aren't limited to) :
+				    	<a onclick="" class="talent-box">programming</a>, 
+				    	<a href="www.google.com" class="talent-box">visual&#8209design</a>, 
+				    	<a href="www.google.com" class="talent-box">UI/UX&#8209design</a>, 
 				    	<a href="www.google.com" class="talent-box">photography</a>, 
-				    	<a href="www.google.com" class="talent-box">line-work</a>, 
+				    	<a href="www.google.com" class="talent-box">line&#8209work</a>, 
 				    	<a href="www.google.com" class="talent-box">Photoshop</a> and 
 				    	<a href="www.google.com" class="talent-box">creativity</a>.
 				    </p>
 			    </div>
 			</div>
 
-			<div class="section" id="section2">
+			<div class="section" id="work">
 				<h1 class="foregroundC">Work</h1>
 
 		    </div>
 
-		    <div class="section playerImage" id="section3">
+		    <div class="section playerImage" id="team">
 		        <h1 class="foregroundC">Team</h1>
 		    </div>
 
-		    <div class="section playerImage" id="section4">
+		    <div class="section playerImage" id="contact">
 		        <h1 class="foregroundC">Contact</h1>
 		    </div>
 
