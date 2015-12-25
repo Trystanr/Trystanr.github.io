@@ -21,7 +21,7 @@
 		    	opacity: 0.9;
 		    }
 
-.backgroundC {
+			.backgroundC {
 		    	-webkit-transition: all 0.5s ease;
 			    -moz-transition: all 0.5s ease;
 			    -o-transition: all 0.5s ease;
@@ -47,6 +47,7 @@
 		    .foregroundNight {
 		    	color: #ecf0f1;
 		    	border-color: #ecf0f1;
+		    	outline-color: #ecf0f1;
 		    	
 		    	-webkit-transition: all 0.5s ease;
 			    -moz-transition: all 0.5s ease;
