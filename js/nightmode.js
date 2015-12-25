@@ -44,12 +44,11 @@
 
                 if ((parseInt(sunrise, 10) < parseInt(timeNow, 10))&&(parseInt(timeNow, 10) < parseInt(sunset, 10))) {
                     //sun is up
-                    
+                    setCookie("trystanRiversNightMode", "false", 365);
                 } else {
                     //sun is down   
                     toggleMode();
-
-                    
+                    setCookie("trystanRiversNightMode", "true", 365);
                 }    
             }
 
@@ -115,15 +114,46 @@
                 if (myCookie == null) {
                     // do cookie doesn't exist stuff;
                     document.getElementById("hideAll").style.display = "none";
+                    if (navigator.geolocation) {
+                        navigator.geolocation.getCurrentPosition(showPosition);
+                    }
                 }
                 else {
                     // do cookie exists stuff
+                        
+                        var bWasNight = getCookie("trystanRiversNightMode");
+                        bNightMode = false;
+
+                        if (bWasNight != "") {
+                            alert("Night mode");
+                            toggleMode;
+
+                        } else {
+                            setCookie("trystanRiversNightMode", "false", 365);
+                        }
+
+                        document.getElementById("hideAll").style.display = "none";
+
+                    }
+                
+
+               
+            }
+
+            function setCookie(cname, cvalue, exdays) {
+                var d = new Date();
+                d.setTime(d.getTime() + (exdays*24*60*60*1000));
+                var expires = "expires="+d.toUTCString();
+                document.cookie = cname + "=" + cvalue + "; " + expires;
+            }
+
+            function getCookie(cname) {
+                var name = cname + "=";
+                var ca = document.cookie.split(';');
+                for(var i=0; i<ca.length; i++) {
+                    var c = ca[i];
+                    while (c.charAt(0)==' ') c = c.substring(1);
+                    if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
                 }
-
-                if (navigator.geolocation) {
-                    navigator.geolocation.getCurrentPosition(showPosition);
-
-                }   else {
-
-                }
+                return "";
             }
