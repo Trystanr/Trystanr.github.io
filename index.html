@@ -7,89 +7,9 @@
 
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
+		<script src="js/nightmode.js"></script>
 
 		<script type="text/javascript">
-			function begin()
-			{
-				if (navigator.geolocation) {
-        			navigator.geolocation.getCurrentPosition(showPosition);
-    			}	
-			}
-
-			var bNightMode = false;
-
-			function showPosition(position) {
-
-    			var currentdate = new Date();
-    			var times = SunCalc.getTimes(new Date(), position.coords.latitude, position.coords.longitude);
-
-				var sunrise = times.sunrise.getHours()+""+times.sunrise.getMinutes();
-				
-				if (sunrise.length == 3) {
-					sunrise = "0" + sunrise;
-				}
-
-				var sunset = times.sunset.getHours() + "" + times.sunset.getMinutes();
-				var timeNow = currentdate.getHours() + "" + currentdate.getMinutes();
-				
-
-				if (timeNow.length == 3) {
-					timeNow = "0" + timeNow;
-				}
-
-
-				if ((parseInt(sunrise, 10) < parseInt(timeNow, 10))&&(parseInt(timeNow, 10) < parseInt(sunset, 10))) {
-					//sun is up
-				} else {
-					//sun is down	
-					toggleMode();
-				}
-			}
-
-			
-
-			function toggleMode() {
-				if (bNightMode) {
-					bNightMode = false;
-
-					document.getElementById("nightmode").src="img/moon-white.png";
-					document.getElementById("nightmode").style.backgroundColor = "#2c3e50";
-
-					//make day mode
-
-					var x = document.getElementsByClassName("backgroundC");
-					var i;
-					for (i = 0; i < x.length; i++) {
-					    x[i].classList.remove("backgroundNight");
-					}
-
-					var x = document.getElementsByClassName("foregroundC");
-					var i;
-					for (i = 0; i < x.length; i++) {
-					    x[i].classList.remove("foregroundNight");
-					}
-
-				} else {
-					bNightMode = true;
-
-					document.getElementById("nightmode").src="img/moon-black.png";
-					document.getElementById("nightmode").style.backgroundColor = "#ecf0f1";
-
-					//make night mode
-
-					var x = document.getElementsByClassName("backgroundC");
-					var i;
-					for (i = 0; i < x.length; i++) {
-					    x[i].classList.add("backgroundNight");
-					}
-
-					var x = document.getElementsByClassName("foregroundC");
-					var i;
-					for (i = 0; i < x.length; i++) {
-					    x[i].classList.add("foregroundNight");
-					}
-				}
-			}
 
 			function scrollTo(elementScroll) {
 				$('html, body').animate({
@@ -99,112 +19,7 @@
 
 		</script>
 
-		<style type="text/css">
-			body {
-		    	font-family: 'Roboto-Thin', Segoe UI;
-
-		    	background-color: #ecf0f1;
-		    	color: #2c3e50;
-		    }
-
-		    @font-face {
-		    	font-family:"Roboto-Thin";
-		    	src: url("Roboto/Roboto-Thin.ttf") /* EOT file for IE */
-			}
-
-			@font-face {
-		    	font-family:"Roboto-Light";
-		    	src: url("Roboto/Roboto-Light.ttf") /* EOT file for IE */
-			}
-
-		    .center {
-		    	margin-left: auto;
-		    	margin-right: auto;
-		    	display: block;
-		    }
-
-		    .head-title {
-		    	width: 50vw;
-		    	font-size: 8vw;
-		    	text-align: center;
-
-		    	outline: solid #2c3e50 1px;
-
-		    	padding: 10px;
-		    	padding-bottom: 20px;
-		    }
-
-		    .nav-container {
-		    	width: 50vw;
-		    	height: 10vh;
-
-		    	margin-top: 20px;
-		    }
-
-		    .nav-item {
-		    	width: 10vw;
-		    	margin-left: 1.5vw;
-		    	margin-right: 1vw;
-
-		    	padding-top: 10px;
-		    	padding-bottom: 10px; 
-		    	float: left;
-
-		    	font-size: 2vw;
-		    	text-align: center;
-
-		    	outline:1px #2c3e50 solid;
-
-		    	font-family:"Roboto-Light";
-		    	cursor: pointer;
-		    }
-
-		    .nav-item:hover {
-		    	background-color: rgba(0,0,0,0.1);
-		    }
-
-		  	#section0 {
-		  		height: 33vh;
-		  		margin-top: 33vh;
-		  		margin-bottom: 34vh;
-		  	}
-
-		  	h1 {
-		  		font-size: 6em;
-		  		color: #2c3e50;
-		  		text-align: center;
-		  		margin-top: 50vh;
-		  	}
-		  	p{
-				font-size: 2em;
-			}
-
-			#aboutPara {
-				width: 50vw;
-				margin-left: 25vw;
-				overflow: visible;
-			}
-
-			.talent-box {
-				padding: 5px;
-				background-color: #2c3e50;
-				color: #ecf0f1;
-				text-decoration: none;
-
-				border-radius: 10px;
-				cursor: pointer;
-
-				border: solid #ecf0f1 1px;
-
-				margin-right: 5px;
-			}
-
-			.talent-box:hover {
-		    	opacity: 0.9;
-		    }
-
-		</style>
-
+		<link rel="stylesheet" type="text/css" href="css/custom.css">
 		<link rel="stylesheet" type="text/css" href="css/nightMode.css">
 
 	</head>
@@ -256,9 +71,54 @@
 			<div class="section" id="work">
 				<h1 class="foregroundC">Work</h1>
 
+				<!--
 				<p style="margin-left=10vw;line-height:200%;text-align:justified" class="foregroundC">
 				    	<a href="self/stb/index" class="talent-box">Save The Bees</a>
 				</p>
+				-->
+	
+				<div class="project-cont">
+					
+					<div class="project-box foregroundC">
+						<img src="self\stb\img\2211-Michelson copy.jpg" class="project-image">
+						<div class="project-slider">
+							<div class="project-title">
+								Save The Bees
+							</div>
+							<div class="project-text">
+								Final matric project 2014. Website and Delphi application.
+							</div>
+							<a href="self/stb/index" class="project-button backgroundT">Visit</a>
+						</div>
+					</div>
+
+					<div class="project-box foregroundC">
+						<img src="theplayersclub\img\3.png" class="project-image">
+						<div class="project-slider">
+							<div class="project-title">
+								The Players Club
+							</div>
+							<div class="project-text">
+								Football scouting agency.
+							</div>
+							<a href="theplayersclub\index" class="project-button backgroundT">Visit</a>
+						</div>
+					</div>
+
+					<div class="project-box foregroundC">
+						<img src="self\bb\img\Walt.png" class="project-image">
+						<div class="project-slider">
+							<div class="project-title">
+								Breaking Bad
+							</div>
+							<div class="project-text">
+								Practice website for the AMC show, Breaking Bad.
+							</div>
+							<a href="self/bb/index" class="project-button backgroundT">Visit</a>
+						</div>
+					</div>
+
+				</div>
 
 		    </div>
 

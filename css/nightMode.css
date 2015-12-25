@@ -1,4 +1,4 @@
-#nightmode {
+			#nightmode {
 			   position:fixed;
 			   top:0;
 			   right:0;
@@ -22,6 +22,13 @@
 		    }
 
 			.backgroundC {
+		    	-webkit-transition: all 0.5s ease;
+			    -moz-transition: all 0.5s ease;
+			    -o-transition: all 0.5s ease;
+			    transition: all 0.5s ease;
+		    }
+
+		    .backgroundT {
 		    	-webkit-transition: all 0.5s ease;
 			    -moz-transition: all 0.5s ease;
 			    -o-transition: all 0.5s ease;
@@ -72,3 +79,15 @@
 	            color: #ecf0f1;
 	            text-decoration: none;
 	        }
+
+	        .backgroundText {
+		    	color: #2c3e50;
+		    	background-color: #ecf0f1;
+
+		    	
+		    	-webkit-transition: all 0.5s ease;
+			    -moz-transition: all 0.5s ease;
+			    -o-transition: all 0.5s ease;
+			    transition: all 0.5s ease;
+		    }
+
