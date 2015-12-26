@@ -50,7 +50,7 @@
                     toggleMode();
                     
                 }    
-                
+
                 $(window).load(function() {  document.getElementById("hideAll").style.display = "none"; });
             }
 
@@ -164,4 +164,17 @@
                     if (c.indexOf(name) == 0) return c.substring(name.length, c.length);
                 }
                 return "";
+            }
+
+            function showOverlay() {
+                $( "#gallery-overlay" ).fadeIn( "fast", function() {
+                    // Animation complete.
+                  });
+            }
+
+            function hideOverlay() {
+                //document.getElementById("").style.opacity = 0;
+                $( "#gallery-overlay" ).fadeOut( "fast", function() {
+                    // Animation complete.
+                  });
             }

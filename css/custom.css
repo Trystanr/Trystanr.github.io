@@ -285,7 +285,7 @@
 		    	float: left;
 
 		    	border-radius: 19vw;
-		    
+
 		    }
 
 		    .team-cont-cont {
@@ -331,4 +331,37 @@
 		    	margin: 1vw;
 		    	outline: solid #2c3e50 0px; 
 		    	float: right;
+		    }
+
+		    #gallery-overlay {
+		    	width: 90vw;
+		    	height: 80vh;
+		    	background-color: rgba(0,0,0,0.8);
+		    	//border-radius: 10px;
+		    	position: fixed;
+		    	top: 10vh;
+		    	left: 5vw;
+
+		    	-webkit-box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,0.75);
+				-moz-box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,0.75);
+				box-shadow: inset 0px 0px 22px 0px rgba(0,0,0,0.75);
+		    }
+
+		    .gallery-close {
+		    	float: right;
+
+		    	background-color: #ecf0f1;
+		    	padding: 10px;
+
+		    	margin-right: 10px;
+		    	margin-top: 10px;
+
+		    	height: 10px;
+		    	width: 10px;
+		    	text-align: center;
+
+		    	line-height: 10px;
+		    	vertical-align: middle;
+
+		    	cursor: pointer;
 		    }

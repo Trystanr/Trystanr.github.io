@@ -10,7 +10,6 @@
 		<script src="js/nightmode.js"></script>
 
 		<script type="text/javascript">
-			
 
 			function scrollTo(elementScroll) {
 				$('html, body').animate({
@@ -90,7 +89,7 @@
 					
 					<div class="project-header foregroundC">Websites</div>
 					<div class="project-header foregroundC">Graphics</div>
-					<div class="project-header foregroundC">Art</div>
+					<div class="project-header foregroundC" onclick='showOverlay()'>Art</div>
 					<div class="project-header foregroundC">Other?</div>
 
 					<div class="project-box foregroundC">
@@ -147,12 +146,12 @@
 		    <div class="section playerImage" id="team">
 		        <h1 class="foregroundC">Team</h1>
 
-		        <div class="team-cont">
+		        <div class="team-cont foregroundC">
 		        	<img src="img\flat-suit.png" class="team-image">
 		        		<div class="team-cont-cont">
 				        	<div class="team-title">Trystan Rivers</div>
 				        	<div class="team-details">
-				        		Yo this my main boy Trystan he some swagging ass shit. Programming mad skills since the strong 2011. Beginning his adventure in Python, advancing through school in Pascal. Extensively using javascript, HTML and CSS thereafter. Touching subtley on Java, Objective C, PHP and currently pursuing C++ in The University of Pretoria. Lorum ipsum dolor sit amet right up in here. Just taking up space fam. Let's see if one more line could fit up in here.
+				        		Yo this my main boy Trystan he some swagging ass shit. Programming mad skills since the strong 2011. Beginning his adventure in Python, advancing through school in Pascal. Extensively using javascript, HTML and CSS thereafter. Touching subtley on Java, Objective C, PHP and currently pursuing C++ in The University of Pretoria. Lorum ipsum dolor sit amet right up in here. Just taking up space fam. Let's see if one more line could fit up in here. A few more words ought to do it yeah? 
 				        	</div>
 				        	<div class="team-social-cont">
 				        		<a href=""><img src="theplayersclub\img\icn\mail.png" class="team-social-img"></a>
@@ -166,7 +165,13 @@
 		        <h1 class="foregroundC">Contact</h1>
 		    </div>
 
+		    <div id="gallery-overlay" style="opacity=100">
+		    	<div class="gallery-close" onclick='hideOverlay()'>x</div>
+
+		    </div>
+
 		</div>
+
 
 
 		<script type="text/javascript" src="js/suncalc.js"></script>
