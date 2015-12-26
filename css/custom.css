@@ -3,6 +3,7 @@
 
 		    	background-color: #ecf0f1;
 		    	color: #2c3e50;
+		    	margin: 0;
 		    }
 
 		    @font-face {
@@ -264,4 +265,70 @@
 		    	color: #ecf0f1;
 
 		    	font-size: 1.5vw;
+		    }
+
+		    .team-cont {
+		    	width: 64vw;
+		    	height: 20vw;
+		    	margin-left: 18vw;
+		    	margin-right: 18vw;
+
+		    	overflow:auto;
+
+		    	outline: solid #2c3e50 1px;
+		    }
+
+		    .team-image {
+		    	width: 19vw;
+		    	height: 19vw;
+
+		    	float: left;
+
+		    	border-radius: 19vw;
+		    
+		    }
+
+		    .team-cont-cont {
+		    	width: 45vw;
+		    	height: 20vw;
+		    	float: right;
+		    }
+
+		    .team-title {
+		    	height: 1vw;
+		    	width: 44vw;
+
+		    	font-size: 2vw;
+		    	text-align: left;
+		    	padding-top: .5vw;
+		    	padding-bottom: 2vw;
+
+		    	float: left;
+		    	font-family:"Roboto-Light";
+		    }
+
+		    .team-details {
+		    	height: 10vw;
+		    	width: 44vw;
+		    
+		    	font-size: 1.3vw;
+		    	text-align: justify;
+		    	
+		    	float: left;
+		    }
+
+		    .team-social-cont {
+		    	margin-top: .5vw;
+		    	width: 44vw;
+		    	height: 5vw;
+		    	float: left;
+		    	
+		    }
+
+		    .team-social-img {
+		    	width: 3vw;
+		    	height: 3vw;
+		    	margin: 1vw;
+		    	outline: solid #2c3e50 0px; 
+		    	float: right;
 		    }

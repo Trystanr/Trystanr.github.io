@@ -40,7 +40,7 @@
                     timeNow = "0" + timeNow;
                 }
 
-                $(window).load(function() {  document.getElementById("hideAll").style.display = "none"; });
+                
 
                 if ((parseInt(sunrise, 10) < parseInt(timeNow, 10))&&(parseInt(timeNow, 10) < parseInt(sunset, 10))) {
                     //sun is up
@@ -50,6 +50,8 @@
                     toggleMode();
                     
                 }    
+                
+                $(window).load(function() {  document.getElementById("hideAll").style.display = "none"; });
             }
 
             function toggleMode() {
