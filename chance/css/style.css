@@ -614,7 +614,6 @@ body {
 	#merch-cont {
 		width: 60vw;
 		margin-left: 20vw;
-		background-color: rgba(0,0,0,0.3);
 	}
 
 		.merch-header {
@@ -625,13 +624,22 @@ body {
 
 			font-family: Helvetica-bolcon;
 		}	
+			.merch-checkbox + label:hover {
+				cursor: pointer;
+			}
+
 
 			.merch-checkbox {
 				display: none;
+
+				height: 0vw;
 			}
 
 				.merch-checkbox:checked ~ .merch-cont-feedback {
-					background-color: rgba(0,255,0,0.5);
+					background-color: rgba(0,255,0,0.4);
+					height: 1vw;
+
+					transition: 100ms height ease-out;
 				}
 
 			.merch-cont-cont {
@@ -639,7 +647,6 @@ body {
 				height: 30vw;	
 				float: left;
 
-				background-color: rgba(0,0,0,0.3);
 			}
 
 				.merch-image {
@@ -649,7 +656,7 @@ body {
 					margin: 2vw;
 					margin-bottom: 0;
 
-					background-color: rgba(0,0,0,0.3);
+					background-color: rgba(0,0,0,0.2);
 				}
 
 				.merch-text {
@@ -671,10 +678,11 @@ body {
 				.merch-cont-feedback {
 					width: 16vw;
 					margin-left: 2vw;
-					height: 1vw;
+					height: 0vw;
 
 					float: left;
-					background-color: rgba(255,255,255,0.4);
+
+					transition: 100ms all ease-out;
 				}
 
 /*----------MERCH end----------*/
