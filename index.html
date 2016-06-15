@@ -1,181 +1,61 @@
 <html>
 	<head>
-		<title>Trystan Rivers</title>
+		<title></title>
 
 		<meta name="description" content="">
     	<meta name="author" content="Trystan Rivers">
 
-		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-		<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>
-		<script src="js/nightmode.js"></script>
-
-		<script type="text/javascript">
-
-			function scrollTo(elementScroll) {
-				$('html, body').animate({
-				    scrollTop: $(elementScroll).offset().top-100
-				}, 1000);
-			}
-
-		</script>
-
-		<link rel="stylesheet" type="text/css" href="css/custom.css">
-		<link rel="stylesheet" media="screen and (max-device-width: 800px)" href="css/mobile.css" />
-		<link rel="stylesheet" type="text/css" href="css/nightMode.css">
-
+		<link rel="stylesheet" type="text/css" href="css/main.css">
+		<link rel="stylesheet" type="text/css" href="css/desktop.css" media="screen and (min-width:480px)">
+		<link rel="stylesheet" type="text/css" href="css/mobile.css" media="screen and (max-width: 480px")>
 	</head>
 
-	<body class="backgroundC" onload="begin()">
-		
-		<div style="display: none" id="hideAll">&nbsp;</div>
+	<body>
+		<img src="img/logo.png" id="page-logo">
+		<h1 id="page-head">Trystan Rivers</h1>
+		<ui id="page-nav">
+			<li><a href="#about">about</a></li>
+			<li class="page-nav-seperator">/</li>
+			<li><a href="#design">design</a></li>
+			<li class="page-nav-seperator">/</li>
+			<li><a href="contact">contact</a></li>
+		</ui>
 
-		<script type="text/javascript">
-   			document.getElementById("hideAll").style.display = "block";
- 		</script>
-
-		<img id="nightmode" src="img/moon-white.png" onclick="toggleMode()">
-		
-
-		
-
-		<div id="fullpage">
-
-			<div class="section title" id="section0">
-				
-				<div  class="head-title center foregroundC" >Trystan Rivers</div>
-
-				<div class="nav-container center">
-					<a onclick="scrollTo('#about')" class="nav-item foregroundC">about</a>
-					<a onclick="scrollTo('#work')" class="nav-item foregroundC">work</a>
-					<a onclick="scrollTo('#team')" class="nav-item foregroundC">team</a>
-					<a onclick="scrollTo('#contact')" class="nav-item foregroundC">contact</a>
-				</div>
-
-			</div>
-
-			<div class="section playerImage" id="about">
-			    <h1 class="foregroundC">About</h1>
-
-			    <div id="aboutPara">
-				    <p style="text-align:left" class="foregroundC">
-						Hi, I'm Trystan.
-				    </p>
-
-				 
-
-				    <p style="margin-left=10vw;line-height:200%;text-align:justified" class="foregroundC">
-				    	My talents include (but aren't limited to) :
-				    	<a onclick="" class="talent-box">programming</a>, 
-				    	<a href="www.google.com" class="talent-box">visual&#8209design</a>, 
-				    	<a href="www.google.com" class="talent-box">UI/UX&#8209design</a>, 
-				    	<a href="www.google.com" class="talent-box">photography</a>, 
-				    	<a href="www.google.com" class="talent-box">line&#8209work</a>, 
-				    	<a href="www.google.com" class="talent-box">Photoshop</a> and 
-				    	<a href="www.google.com" class="talent-box">creativity</a>.
-				    </p>
-			    </div>
-			</div>
-
-			<div class="section" id="work">
-				<h1 class="foregroundC">Work</h1>
-
-				<!--
-				<p style="margin-left=10vw;line-height:200%;text-align:justified" class="foregroundC">
-				    	<a href="self/stb/index" class="talent-box">Save The Bees</a>
-				</p>
-				-->
-	
-				<div class="project-cont">
-					
-					
-					<div class="project-header foregroundC">Websites</div>
-					<div class="project-header foregroundC">Graphics</div>
-					<div class="project-header foregroundC" onclick='showOverlay()'>Art</div>
-					<div class="project-header foregroundC">Other?</div>
-
-					<div class="project-box foregroundC">
-						<img src="self\stb\img\2211-Michelson copy.jpg" class="project-image">
-						<div class="project-slider">
-							<div class="project-title">
-								Save The Bees
-							</div>
-							<div class="project-text">
-								Final matric project 2014. Website and Delphi application.
-							</div>
-							<a href="self/stb/index" class="project-button backgroundT">Visit</a>
-						</div>
-					</div>
-
-					<div class="empty-box"></div>
-					<div class="empty-box"></div>
-					<div class="empty-box"></div>
-
-					<div class="project-box foregroundC">
-						<img src="theplayersclub\img\3.png" class="project-image">
-						<div class="project-slider">
-							<div class="project-title">
-								The Players Club
-							</div>
-							<div class="project-text">
-								Football scouting agency.
-							</div>
-							<a href="theplayersclub\index" class="project-button backgroundT">Visit</a>
-						</div>
-					</div>
-
-					<div class="empty-box"></div>
-					<div class="empty-box"></div>
-					<div class="empty-box"></div>
-
-					<div class="project-box foregroundC">
-						<img src="self\bb\img\Walt.png" class="project-image">
-						<div class="project-slider">
-							<div class="project-title">
-								Breaking Bad
-							</div>
-							<div class="project-text">
-								Practice website for the AMC show, Breaking Bad.
-							</div>
-							<a href="self/bb/index" class="project-button backgroundT">Visit</a>
-						</div>
-					</div>
-
-				</div>
-
-		    </div>
-
-		    <div class="section playerImage" id="team">
-		        <h1 class="foregroundC">Team</h1>
-
-		        <div class="team-cont foregroundC">
-		        	<img src="img\flat-suit.png" class="team-image">
-		        		<div class="team-cont-cont">
-				        	<div class="team-title">Trystan Rivers</div>
-				        	<div class="team-details">
-				        		Yo this my main boy Trystan he some swagging ass shit. Programming mad skills since the strong 2011. Beginning his adventure in Python, advancing through school in Pascal. Extensively using javascript, HTML and CSS thereafter. Touching subtley on Java, Objective C, PHP and currently pursuing C++ in The University of Pretoria. Lorum ipsum dolor sit amet right up in here. Just taking up space fam. Let's see if one more line could fit up in here. A few more words ought to do it yeah? 
-				        	</div>
-				        	<div class="team-social-cont">
-				        		<a href=""><img src="theplayersclub\img\icn\mail.png" class="team-social-img"></a>
-				        		<a href=""><img src="theplayersclub\img\icn\twitter.png" class="team-social-img"></a>
-				        	</div>
-			        	</div>
-		        </div>
-		    </div>
-
-		    <div class="section playerImage" id="contact">
-		        <h1 class="foregroundC">Contact</h1>
-		    </div>
-
-		    <div id="gallery-overlay" style="opacity=100">
-		    	<div class="gallery-close" onclick='hideOverlay()'>x</div>
-
-		    </div>
-
+		<div class="container" id="about">
+		    ABOUT
 		</div>
 
+		<h1 id="about-head">Frontend, UI, Design</h1>
+		<p id="about-paragraph">
+			Passionate about design: these three words describe me entirely. I'm a firm believer in finding the beauty in simpicity. Let's create something spectacular, together.
+		</p>
 
+		<div class="container" id="design">
+		    DESIGN
+		</div>
 
-		<script type="text/javascript" src="js/suncalc.js"></script>
+		<div class="about" style="height:200vh;"></div>
+
+		<div class="container" id="contact">
+		    CONTACT
+		</div>
+
+		<div class="about" style="height:200vh;"></div>
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script type="text/javascript">
+			var velocity = 0.4;
+
+			function update(){ 
+			    var pos = $(window).scrollTop(); 
+			    $('.container').each(function() { 
+			        var height = $('.container').height()-400;
+			        $('.container').css('backgroundPosition', '50% ' + Math.round((height - pos) * velocity) + 'px'); 
+			    }); 
+			};
+			
+			$(window).bind('scroll', update);
+		</script>
 	</body>
 
 </html>

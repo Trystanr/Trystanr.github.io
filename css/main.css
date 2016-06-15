@@ -1,0 +1,79 @@
+body {
+	margin: 0;
+	padding: 0;
+
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+
+@font-face {
+    font-family: BasicTitle;
+    src: url(../font/basictitlefont.ttf);
+}
+
+@font-face {
+    font-family: Champ;
+    src: url(../font/champ.ttf);
+}
+
+@font-face {
+    font-family: Josefin;
+    src: url(../font/JosefinSans.ttf);
+}
+
+#about{
+    background-image:url(../img/waves.jpg);
+    background-position:center;
+    background-size: cover;
+}
+#design{
+    background-image:url(../img/clouds.jpg);
+    background-position:center;
+    background-size: cover;
+}
+#contact{
+    background-image:url(../img/trees.jpg);
+    background-position:center;
+    background-size: cover;
+}
+
+#page-head {
+	font-family: BasicTitle;
+}
+
+#page-nav {
+	display: block;
+}
+#page-nav li {
+	display: inline;
+	float: left;
+
+	font-family: Champ;
+}
+#page-nav a {
+	display: block;
+}
+
+#page-nav a:link {
+	text-decoration: none;
+	color: rgb(0,0,0);
+}
+
+#page-nav a:visited {
+	text-decoration: none;
+	color: rgb(0,0,0);
+}
+
+.container{
+    color:rgba(255,255,255,0.6);
+
+    font-family: Champ;
+}
+
+#about-head {
+	font-family: BasicTitle;
+}
+
+#about-paragraph {
+	font-family: Josefin;
+}

@@ -1,6 +1,6 @@
 #page-logo {
-	width: 40vw;
-	margin-left: 30vw;
+	width: 10vw;
+	margin-left: 45vw;
 
 	margin-top: 20vh;
 }
@@ -9,29 +9,30 @@
 	margin: 0;
 	padding: 0;
 
-	width: 80vw;
-	height: 8vh;
-	font-size: 10vw;
-	margin-left: 10vw;
-	margin-top: 4vw;
+	width: 60vw;
+	height: 13vh;
+	font-size: 9vw;
+	margin-left: 20vw;
+	margin-top: 1vw;
+	margin-bottom: 2vw;
 	text-align: center;
 }
 
 #page-nav {
-	width: 100vw;
-	margin-left: 0vw;
-	height: 10vh;
+	width: 30vw;
+	margin-left: 35vw;
+	height: 5vh;
 	margin-bottom: 45vh;
 }
 #page-nav li {
-	font-size: 8vw;
-	width: 100vw;
+	font-size: 2vw;
+	width: 6vw;
 	text-align: center;
 	padding: 0;
 }
 .page-nav-seperator {
-	visibility: hidden;
-	height: 0;
+	width: 1vw;
+	padding: 0;
 }
 
 .container{
@@ -39,24 +40,24 @@
     padding-top: 20vh;
     margin-bottom: 15vh;
     text-align:center;
-    font-size: 10vw;
+    font-size: 5vw;
 }
 
 #about-head {
 	text-align: left;
-	font-size: 8vw;
-	width: 80vw;
+	font-size: 3.4vw;
+	width: 60vw;
 	margin-bottom: 2vh;
-	margin-left: 10vw;
+	margin-left: 20vw;
 	padding: 0;
 }
 
 #about-paragraph {
-	font-size: 4vw;
-	width: 80vw;
+	font-size: 1.9vw;
+	width: 60vw;
 	margin: 0;
-	margin-left: 10.2vw;
-	padding-left: 2vw;
+	margin-left: 20.2vw;
+	padding-left: 1vw;
 	margin-bottom: 15vw;
 	border-left: 1px black solid;
 }
