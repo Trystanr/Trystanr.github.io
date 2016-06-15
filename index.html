@@ -44,17 +44,27 @@
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
 		<script type="text/javascript">
-			var velocity = 0.4;
 
-			function update(){ 
-			    var pos = $(window).scrollTop(); 
-			    $('.container').each(function() { 
-			        var height = $('.container').height()-400;
-			        $('.container').css('backgroundPosition', '50% ' + Math.round((height - pos) * velocity) + 'px'); 
-			    }); 
-			};
+			function isMobile() {
+				return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+				}
+
+				if (!isMobile()) {
+				
+					var velocity = 0.4;
+
+					function update(){ 
+					    var pos = $(window).scrollTop(); 
+					    $('.container').each(function() { 
+					        var height = $('.container').height()-400;
+					        $('.container').css('backgroundPosition', '50% ' + Math.round((height - pos) * velocity) + 'px'); 
+					    }); 
+					};
+					
+					$(window).bind('scroll', update);
+
+				}
 			
-			$(window).bind('scroll', update);
 		</script>
 	</body>
 
