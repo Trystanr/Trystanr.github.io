@@ -108,6 +108,7 @@
 			         	bOverlay = true;
 
 			         	console.log($(this).attr("src"));
+			         	console.log($(this).offset());
 
 			         	$('#overlay-image').attr('src', $(this).attr("src"));
 			         };
@@ -122,12 +123,12 @@
 
 			function showOverlay() {
 				$('body').addClass('stop-scrolling');
-				$('#overlay').show();
+				$('#overlay').fadeIn(200);
 			};
 
 			function hideOverlay() {
+				$('#overlay').fadeOut(200);
 				$('body').removeClass('stop-scrolling');
-				$('#overlay').hide();
 			};
 			
 		</script>
