@@ -60,3 +60,24 @@
 	margin-bottom: 30vw;
 	border-left: 1px black solid;
 }
+
+#design-grid {
+    width: 84vw;
+    margin-left: 4vw;
+
+    padding: 1vw;
+    outline: 1px black solid;
+
+    margin-bottom: 10vw;
+    overflow: hidden;
+}
+    
+    .design-column {
+	    width: 80vw;
+    }
+
+    .design-item {
+        width:	84vw;
+        height: auto;
+        margin-bottom: 2vw;
+    }

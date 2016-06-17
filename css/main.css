@@ -105,20 +105,11 @@ body {
 /* UPDATE */
 
 #design-grid {
-    width: 66vw;
-    margin-left: 17vw;
-
-    padding: 1vw;
     outline: 1px black solid;
-
-    margin-bottom: 10vw;
     overflow: hidden;
 }
     
     .design-column {
-        width: 20vw;
-        margin: 1vw 1vw 1vw 1vw;
-        //outline: 1px black solid;
         float: left;
     }
 
@@ -128,13 +119,4 @@ body {
         margin-bottom: 2vw;
         //outline: 1px black solid;
         
-        -webkit-filter: grayscale(100%);
-        transition: -webkit-filter .1s ease-out;
-    }
-
-    .design-item:hover{
-        -webkit-filter: grayscale(0);
-        cursor: pointer;
-
-        transition: -webkit-filter .1s ease-out;
     }

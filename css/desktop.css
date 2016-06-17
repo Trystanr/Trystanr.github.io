@@ -59,5 +59,35 @@
 	margin-left: 20.2vw;
 	padding-left: 1vw;
 	margin-bottom: 15vw;
-	border-left: 1px black solid;
 }
+
+#design-grid {
+    width: 66vw;
+    margin-left: 16vw;
+
+    padding: 1vw;
+
+    margin-bottom: 10vw;
+}
+    
+    .design-column {
+        width: 20vw;
+        margin: 1vw;
+    }
+
+    .design-item {
+        width: 20vw;
+        height: auto;
+        margin-bottom: 2vw;
+
+
+        -webkit-filter: grayscale(100%);
+        transition: -webkit-filter .1s ease-out;
+    }
+
+    .design-item:hover{
+        -webkit-filter: grayscale(0);
+        cursor: pointer;
+
+        transition: -webkit-filter .1s ease-out;
+    }
