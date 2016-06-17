@@ -21,6 +21,30 @@ body {
     src: url(../font/JosefinSans.ttf);
 }
 
+#overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: rgba(255,255,255,0.6);
+    overflow: hidden;
+    z-index: 10;
+    display: none;
+}
+
+    #overlay-image {
+        height: 80vh;
+        margin-top: 10vh;
+        display: block;
+        width: auto;
+        margin-right: auto;
+        margin-left: auto;
+    }
+
+    .stop-scrolling {
+          height: 100%;
+          overflow: hidden;
+        }
+
 #about{
     background-image:url(../img/waves.jpg);
     background-position:center;
@@ -77,3 +101,40 @@ body {
 #about-paragraph {
 	font-family: Josefin;
 }
+
+/* UPDATE */
+
+#design-grid {
+    width: 66vw;
+    margin-left: 17vw;
+
+    padding: 1vw;
+    outline: 1px black solid;
+
+    margin-bottom: 10vw;
+    overflow: hidden;
+}
+    
+    .design-column {
+        width: 20vw;
+        margin: 1vw 1vw 1vw 1vw;
+        //outline: 1px black solid;
+        float: left;
+    }
+
+    .design-item {
+        width: 20vw;
+        height: auto;
+        margin-bottom: 2vw;
+        //outline: 1px black solid;
+        
+        -webkit-filter: grayscale(100%);
+        transition: -webkit-filter .1s ease-out;
+    }
+
+    .design-item:hover{
+        -webkit-filter: grayscale(0);
+        cursor: pointer;
+
+        transition: -webkit-filter .1s ease-out;
+    }

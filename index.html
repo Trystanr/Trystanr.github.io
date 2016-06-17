@@ -11,6 +11,10 @@
 	</head>
 
 	<body>
+		<div id="overlay">
+			<img src="img/portfolio/DONT.png" id="overlay-image">
+		</div>
+
 		<img src="img/logo.png" id="page-logo">
 		<h1 id="page-head">Trystan Rivers</h1>
 		<ui id="page-nav">
@@ -34,7 +38,31 @@
 		    DESIGN
 		</div>
 
-		<div class="about" style="height:200vh;"></div>
+		<h1 id="about-head">Posters, Apps, AlbumArt</h1>
+
+		<div id="design-grid">
+			<div class="design-column">
+				<img class="design-item" src="img/portfolio/DONT.png">
+				<img class="design-item" src="img/portfolio/Drake-Quote.png">
+				<img class="design-item" src="img/portfolio/iPhone.png">
+			</div>
+			<div class="design-column">
+				<img class="design-item" src="img/portfolio/musicPlayer.png">
+				<img class="design-item" src="img/portfolio/STB.png">
+				
+				<img class="design-item" src="img/portfolio/One.jpg">
+			</div>
+			<div class="design-column">
+				<img class="design-item" src="img/portfolio/A4.png">
+				<img class="design-item" src="img/portfolio/AlbumArt.png">
+<img class="design-item" src="img/portfolio/WHAT.png">	
+			</div>
+			
+			
+			
+
+		</div>
+		
 
 		<div class="container" id="contact">
 		    CONTACT
@@ -42,12 +70,12 @@
 
 		<div class="about" style="height:200vh;"></div>
 
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+		<script src="js/vendor/jquery.js"></script>
 		<script type="text/javascript">
 
 			function isMobile() {
 				return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-				}
+			}
 
 				if (!isMobile()) {
 				
@@ -64,6 +92,43 @@
 					$(window).bind('scroll', update);
 
 				}
+
+			var bOverlay = false;
+
+			$( document ).ready(function() {
+				 $(".design-item").click(function(){
+			         if (bOverlay) {
+			         
+
+			         	
+			         	hideOverlay();
+			         	bOverlay = false;
+			         } else {
+			         	showOverlay();
+			         	bOverlay = true;
+
+			         	console.log($(this).attr("src"));
+
+			         	$('#overlay-image').attr('src', $(this).attr("src"));
+			         };
+			      });
+
+				 $("#overlay").click(function(){
+				 	hideOverlay();
+			        bOverlay = false;
+				 });
+			   
+			});
+
+			function showOverlay() {
+				$('body').addClass('stop-scrolling');
+				$('#overlay').show();
+			};
+
+			function hideOverlay() {
+				$('body').removeClass('stop-scrolling');
+				$('#overlay').hide();
+			};
 			
 		</script>
 	</body>
