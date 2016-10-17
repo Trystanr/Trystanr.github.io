@@ -51,7 +51,7 @@ img {
     border-right: 2px solid #fff;
 }
 
-#taskbar-windows:hover #taskbar-start{
+#taskbar-windows:hover #taskbar-start {
     border: 1px dotted #000;
 }
 
@@ -88,7 +88,6 @@ img {
     width: 240px;
     height: 200px;
     min-width: 240px;
-
     left: 46px;
     top: 50px;
 }
@@ -174,4 +173,117 @@ img {
 .ui-icon-gripsmall-diagonal-se {
     background-position: -64px -224px;
     z-index: 0 !important;
+}
+
+#taskbar-menu {
+    height: 300px;
+    width: auto;
+    position: absolute;
+    bottom: 27px;
+    left: 3px;
+    background-color: #c3c7cb;
+    z-index: 2;
+    border-right: #000 2px solid;
+    border-bottom: #000 1px solid;
+    border-left: #c3c7cb 1px solid;
+    border-top: #c3c7cb 1px solid;
+}
+
+#taskbar-menu-inner {
+    border-left: 1px solid #fff;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #868a8e;
+    border-right: 1px solid #868a8e;
+    height: 296px;
+}
+
+#taskbar-menu-left > span {
+
+    position: absolute;
+    bottom: 70px;
+    left: -60px;
+
+    font-size: 28px;
+
+    -webkit-transform: rotate(-90deg);
+    color: #c3c7cb;
+    font-weight: 900;
+}
+
+#taskbar-menu-left > span > span {
+    font-weight: 100;
+    color: #fff;
+}
+
+#taskbar-menu-left {
+    height: 296px;
+    background-color: #868a8e;
+    width: 36px;
+    display: inline-block;
+    float: left;
+}
+
+#taskbar-menu-inner > ul {
+    margin-top: 0;
+    position: relative;
+    height: 100%;
+    padding-left: 36px;
+}
+
+#taskbar-menu-inner > ul > li {
+    height: 30px;
+    width: 160px;
+    padding: 4px 10px;
+    padding-right: 20px;
+    list-style: none;
+
+    position: relative;
+}
+
+#taskbar-menu-inner > ul > li:hover {
+    background-color: #010080;
+    color: #fff;
+}
+
+#taskbar-menu-inner > ul > li:hover > .menu-right{
+    border-left: 5px solid #fff;
+}
+
+#taskbar-menu-inner > ul > li:last-child {
+    border-top: 1px solid #fff;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    -webkit-box-shadow: 0px -2px 0px 0px rgba(134,138,142,1);
+-moz-box-shadow: 0px -2px 0px 0px rgba(134,138,142,1);
+box-shadow: 0px -2px 0px 0px rgba(134,138,142,1);
+    position: absolute;
+    bottom: 0;
+}
+
+#taskbar-menu-inner > ul > li > span {
+    vertical-align: top;
+    line-height: 30px;
+    padding-left: 6px;
+}
+
+.menu-left {
+    display: inline-block;
+    height: 30px;
+}
+
+.menu-right {
+    display: inline-block;
+    float: right;
+    height: 10px;
+
+    position: absolute;
+    right: 6px;
+    top: 12px;
+
+    width: 0; 
+    height: 0; 
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+  
+    border-left: 5px solid #000;
 }
