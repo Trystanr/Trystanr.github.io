@@ -186,7 +186,7 @@ span {
     bottom: 27px;
     left: 3px;
     background-color: #c3c7cb;
-    z-index: 2;
+    z-index: 100;
     border-right: #000 2px solid;
     border-bottom: #000 1px solid;
     border-left: #c3c7cb 1px solid;
