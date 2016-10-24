@@ -1,21 +1,4 @@
 $(document).ready(function() {
-    //    $('.resp-border').draggable({
-    // 	handle: ".resp-head",
-    // 	opacity: 0.9,
-    // 	scroll: false,
-    // 	containment: "none"
-    // }).resizable({
-    //   handles: "n, e, s, w, se",
-    //   containment: "parent",
-    //     minHeight: 200,
-    //     minWidth: 240,
-    //     alsoResize: ".resp-inner, .resp-body, .resp-border"
-    // });
-
-    // $('body').mouseout(function() {
-    //     alert('mouse has left the building!');
-    // });
-
     setInterval('updateClock()', 1000);
 
     $(document).click(function(event) {
@@ -114,3 +97,8 @@ function toggleTaskbar() {
 $('#taskbar').click(function(event){
     event.stopPropagation();
 });
+
+function shutDown() {
+    ///alert('yo');
+    $('#shutdown').fadeIn('slow');
+}

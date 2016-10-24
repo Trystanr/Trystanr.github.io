@@ -120,3 +120,17 @@ body {
         //outline: 1px black solid;
         
     }
+
+.contact-container {
+    width: 100vw;
+    height:20vh;
+
+    text-align: center;
+    color: black;
+    line-height: 20vh;
+    font-family: Champ;
+}
+
+    #facebook {
+        background-color: rgba(0,10,200,0.8);
+    }

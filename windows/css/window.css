@@ -1,0 +1,96 @@
+/* WINDOW STYLING */
+
+.resp-border {
+    border-right: 1px solid #404040;
+    border-bottom: 1px solid #404040;
+    border-top: 1px solid #d3cfc7;
+    border-left: 1px solid #d3cfc7;
+    width: 240px;
+    height: 200px;
+    min-width: 240px;
+    left: 46px;
+    top: 50px;
+}
+
+.resp-inner {
+    border-right: 1px solid #808080;
+    border-bottom: 1px solid #808080;
+    border-top: 1px solid #fefefe;
+    border-left: 1px solid #fefefe;
+    background-color: #d3cfc7;
+    padding: 2px;
+    height: 194px;
+}
+
+.resp-head {
+    background-color: #000080;
+    background: #000080;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, #000080 0%, #1084d0 100%);
+    /* FF3.6-15 */
+    background: -webkit-linear-gradient(left, #000080 0%, #1084d0 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right, #000080 0%, #1084d0 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#000080', endColorstr='#1084d0', GradientType=1);
+    /* IE6-9 */
+    margin-bottom: 3px;
+    padding-bottom: 0;
+    height: 19px;
+}
+
+.resp-head img {
+    display: inline;
+    padding-left: 2px;
+    image-rendering: pixelated;
+    padding-bottom: 1px;
+    padding-top: 1px;
+    -webkit-transform: translate(0, -3px);
+    cursor: pointer;
+}
+
+.resp-head span {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    height: 22px;
+    -webkit-transform: translate(0, -3px);
+    overflow: hidden;
+    cursor: default;
+}
+
+.rasp-tools {
+    display: inline-block;
+    float: right;
+}
+
+.rasp-tools img:first-child {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.rasp-tools img {
+    display: inline-block;
+    float: right;
+    padding: 0px;
+    padding-top: 6px;
+    margin: 0px;
+}
+
+.resp-body {
+    /*box-shadow: inset 0px 0px 0px 1px rgba(64,64,64,1);*/
+    outline: 1px solid #808080;
+    border: 1px solid rgba(64, 64, 64, 1);
+    background-color: #fff;
+    padding-left: 5px;
+    /*max-height: 200px;*/
+    height: 170px;
+    overflow: hidden;
+}
+
+.ui-icon-gripsmall-diagonal-se {
+    background-position: -64px -224px;
+    z-index: 0 !important;
+}
