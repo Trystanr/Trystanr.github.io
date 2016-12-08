@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="css/window.css">
     <link rel="stylesheet" type="text/css" href="css/taskbar.css">
     <link rel="stylesheet" type="text/css" href="css/taskbar-menu.css">
+    <link rel="stylesheet" type="text/css" href="css/control.css">
     <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
     <script src="js/vendor/jquery.js"></script>
     <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
@@ -19,7 +20,8 @@
     <div id="shutdown">
         
     </div>
-    <div class="resp-border" id="notepad" style="display: none">
+
+    <div class="resp-border" id="notepad" style="display: block">
         <div class="resp-inner">
             <div class="resp-head">
                 <img src="img/accessories-icon.png">
@@ -32,13 +34,14 @@
             </div>
             <div class="resp-body">
 
-                <a href="#" class="control-button">test</a>
+                <a href="#" class="control-button">Cancel</a>
 
             </div>
             <!--  <div class="resp-body" contenteditable="true">
             </div> -->
         </div>
     </div>
+
     <div id="taskbar">
         <div id="taskbar-windows" onclick="toggleTaskbar()">
             <img src="img/start.png" id="taskbar-start">

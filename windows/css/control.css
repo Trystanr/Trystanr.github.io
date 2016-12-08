@@ -1,4 +1,4 @@
-.borders {position: relative;
+/*.borders {position: relative;
 border: 5px solid #f00;}
 
 .borders:before {
@@ -10,8 +10,41 @@ border: 5px solid #f00;}
     right: 5px;
     bottom: 5px;
     border: 5px solid #ffea00;
-};
+};*/
 
 .control-button {
-    
+	position: relative;
+    border-bottom: 1px solid #000000;
+    border-right: 1px solid #000000;
+    height: 30px;
+    padding-bottom: 6px;
+    padding-top: 3px; 
+	    padding-left: 16px;
+	    padding-right: 16px;
+	    text-decoration: none;
+	    color: #000000;
+    bottom: 20px;
+    right: 20px;
 }
+
+.control-button:before {
+    content: " ";
+    position: absolute;
+    z-index: 200;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+     border-top: 1px solid #fff;
+    border-left: 1px solid #fff;
+    border-bottom: 1px solid #808080;
+    border-right: 1px solid #808080;
+}
+
+.control-button:active {
+	border-top: 1px solid #000000;
+	border-left: 1px solid #000000;
+	border-right: 2px solid #000000;
+	border-bottom: 2px solid #000000;
+}
+
