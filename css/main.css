@@ -122,7 +122,9 @@ body {
     }
 
 .contact-container {
-    width: 100vw;
+    margin-left: 20vw;
+    margin-bottom: 5vh;
+    width: 60vw;
     height:20vh;
 
     text-align: center;
@@ -132,5 +134,9 @@ body {
 }
 
     #facebook {
-        background-color: rgba(0,10,200,0.8);
+        background-color: rgba(59,89,152,1);
+    }
+
+    #twitter {
+        background-color: rgba(0,172,237,1);
     }
