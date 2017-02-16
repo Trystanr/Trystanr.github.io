@@ -21,17 +21,7 @@ body
 
 .testing-space {
     height: 100vh;
-}
-
-#head {
-    height: 10vh;
-    margin-top: 10px;
-    background-image: url('../img/logo.jpg');
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-color: #152637;
-    background-blend-mode: screen;
+    background-color: #fff;
 }
 
 nav
@@ -83,14 +73,32 @@ nav
 
     vertical-align: middle;
 }
+#warriors-landing {
+    background: url('../img/team-pic.JPG') no-repeat;
+   background-position: center;
+   background-size: cover;
+
+   height: 90vh;
+}
+
+#head {
+    height: 10vh;
+    margin-top: 30vh;
+    background-image: url('../img/logo.jpg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    /*background-color: #152637;*/
+    background-blend-mode: screen;
+}
 
 #warriors-header {
-    color: white;  /* Fallback: assume this color ON TOP of image */
-   background: url('../img/team.jpg') no-repeat;
-   background-position: center;
-   -webkit-background-clip: text;
-   -webkit-text-fill-color: transparent;
+    color: rgba(255,255,255,0.88);  /* Fallback: assume this color ON TOP of image */
+   
+   /*-webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;*/
 
+   margin-top: 0vh;
    font-size: 20vw;
    padding-top: 10px;
    font-weight: bolder;
