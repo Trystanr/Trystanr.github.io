@@ -35,7 +35,7 @@ body
     }
 
 .row-light-dark {
-    height: 5vw;
+    height: 7vw;
     -webkit-clip-path: polygon(
         0 0,
         100% 0,
@@ -155,5 +155,29 @@ nav
 }
 
 .row-header {
-
+    font-family: babas;
+    font-size: 2em;
+    margin-bottom: 0;
 }
+
+.capsule {
+    border: 1px solid #152637;
+    padding: 20px;
+}
+    .capsule p {
+        margin-left: 10px;
+    }
+
+#map-capsule {
+    background-image: url('../img/map.png');
+    background-size: cover;
+}
+
+    #map-capsule h1 {
+            color: #fff;
+        }
+
+    #map-capsule p {
+            color: #fff;
+            line-height: 1em;
+        }
