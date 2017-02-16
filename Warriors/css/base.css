@@ -24,6 +24,52 @@ body
     background-color: #fff;
 }
 
+.row-light {
+    background-color: #fff;
+    padding: 20px;
+    
+}
+
+    .row-light h1 {
+        color: #152637;
+    }
+
+.row-light-dark {
+    height: 5vw;
+    clip-path: polygon(
+        0 0,
+        100% 0,
+        100% 100%,
+        0 calc(100% - 5vw)
+      );
+
+    background-color: #fff;
+}
+
+.row-dark-light {
+    height: 7vw;
+    clip-path: polygon(
+        0 0,
+        0 100%,
+        100% 100%,
+        0 calc(100% - 7vw)
+      );
+
+    background-color: #fff;
+}
+
+.row-dark {
+    background-color: #152637;
+    padding: 20px;
+    position: relative;
+
+    margin-top: 0vw;
+}
+
+    .row-dark h1 {
+        color: #fff;
+    }
+
 nav
 {
     /*background: #152637;*/
@@ -106,4 +152,8 @@ nav
    line-height: 18vw;
 
    font-family: babas;
+}
+
+.row-header {
+
 }
