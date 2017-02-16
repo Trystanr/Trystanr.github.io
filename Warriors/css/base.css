@@ -36,7 +36,7 @@ body
 
 .row-light-dark {
     height: 5vw;
-    clip-path: polygon(
+    webkit-clip-path: polygon(
         0 0,
         100% 0,
         100% 100%,
@@ -48,7 +48,7 @@ body
 
 .row-dark-light {
     height: 7vw;
-    clip-path: polygon(
+    webkit-clip-path: polygon(
         0 0,
         0 100%,
         100% 100%,
