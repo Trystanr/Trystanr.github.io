@@ -20,6 +20,7 @@ body
 
 #head {
     height: 10vh;
+    margin-top: 10px;
     background-image: url('../img/logo.jpg');
     background-size: contain;
     background-position: center;
@@ -30,7 +31,16 @@ body
 
 nav
 {
-    background: #152637;
+    /*background: #152637;*/
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#152637+0,222b35+100 */
+    background: rgb(21,38,55); /* Old browsers */
+    background: -moz-linear-gradient(left,  rgba(21,38,55,1) 0%, rgba(34,43,53,1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgba(21,38,55,1) 0%,rgba(34,43,53,1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgba(21,38,55,1) 0%,rgba(34,43,53,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#152637', endColorstr='#222b35',GradientType=1 ); /* IE6-9 */
+
+
+    background-color: transparent;
     margin-top: 10px;
     border-top: 1px solid rgba(114,124,135,.2);
     border-bottom: 1px solid rgba(114,124,135,.2);
@@ -56,7 +66,9 @@ nav
 
     color: #f6f7ee;
     border-right: 1px solid rgba(114,124,135,.2);
-    background: #152637;
+    /*background: #152637;*/
+    background-color: transparent;
+
 }
 
 .logo,
