@@ -1,3 +1,8 @@
+@font-face {
+    font-family: babas;
+    src: url('../font/Bebas.otf');
+}
+
 body
 {
     font-family: -apple-system, BlinkMacSystemFont,
@@ -41,7 +46,6 @@ nav
 
 
     background-color: transparent;
-    margin-top: 10px;
     border-top: 1px solid rgba(114,124,135,.2);
     border-bottom: 1px solid rgba(114,124,135,.2);
 }
@@ -78,4 +82,20 @@ nav
     display: inline-block;
 
     vertical-align: middle;
+}
+
+#warriors-header {
+    color: white;  /* Fallback: assume this color ON TOP of image */
+   background: url('../img/team.jpg') no-repeat;
+   background-position: center;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+
+   font-size: 20vw;
+   padding-top: 10px;
+   font-weight: bolder;
+   text-align: center;
+   line-height: 18vw;
+
+   font-family: babas;
 }
