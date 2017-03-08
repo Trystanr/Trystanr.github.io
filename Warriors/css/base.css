@@ -14,7 +14,8 @@ body
     margin: 0;
     padding: 0;
 
-    background: #152637;
+    /*background: #152637;*/
+    background-color: #fff;
 
     text-rendering: optimizelegibility;
 }
@@ -70,20 +71,19 @@ body
         color: #fff;
     }
 
+    .row-dark h2 {
+        color: #fff;
+    }
+
 nav
 {
-    /*background: #152637;*/
+    background: #152637;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#152637+0,222b35+100 */
-    background: rgb(21,38,55); /* Old browsers */
-    background: -moz-linear-gradient(left,  rgba(21,38,55,1) 0%, rgba(34,43,53,1) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(left,  rgba(21,38,55,1) 0%,rgba(34,43,53,1) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to right,  rgba(21,38,55,1) 0%,rgba(34,43,53,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#152637', endColorstr='#222b35',GradientType=1 ); /* IE6-9 */
 
-
-    background-color: transparent;
+    /*background-color: transparent;*/
     border-top: 1px solid rgba(114,124,135,.2);
     border-bottom: 1px solid rgba(114,124,135,.2);
+    border-left: 1px solid rgba(114,124,135,.2);
 }
 .scroll
 {
@@ -145,7 +145,7 @@ nav
    -webkit-text-fill-color: transparent;*/
 
    margin-top: 0vh;
-   font-size: 20vw;
+   font-size: 8em;
    padding-top: 10px;
    font-weight: bolder;
    text-align: center;
@@ -159,6 +159,29 @@ nav
     font-size: 2em;
     margin-bottom: 0;
 }
+
+#news-recent {
+    border-top: 1px dashed black;
+}
+    #news-recent h2 {
+        color: #152637;
+        text-align: center;
+    }
+
+    .post-header {
+        color: #cd4046 !important;
+        margin-bottom: 0;
+        margin-top: 10px;
+    }
+
+    .post-date {
+        color: #a24145 !important;
+    }
+
+    .post-text {
+        margin-top: 10px;
+    }
+
 
 .capsule {
     border: 1px solid #152637;
