@@ -60,6 +60,11 @@ body {
     background-position:center;
     background-size: cover;
 }
+#portfolio{
+    background-image:url(../img/trees.jpg);
+    background-position:center;
+    background-size: cover;
+}
 
 #page-head {
 	font-family: BasicTitle;
@@ -140,3 +145,127 @@ body {
     #twitter {
         background-color: rgba(0,172,237,1);
     }
+
+/* PORTFOLIO CSS */
+
+#outer {
+    width: 80vw;
+    height: 90vh;
+
+    /* visuals only */
+    margin-left: 10vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+
+
+    transition: width .1s linear;
+
+    border: 1px solid #000;
+}
+
+.inner {
+    width: 19.9vw;
+    height: 90vh;
+
+    float: left;
+
+    /* visuals only */
+    transition: width .1s linear;
+
+    background-size: 100vh;
+    background-blend-mode: screen;
+    background-position: center;
+
+    text-align: center;
+    vertical-align: middle;
+    line-height: 20vh;
+
+    font-family: BasicTitle;
+    
+    font-size: 4em;
+    font-weight: 100;
+
+    color: #000;
+
+    overflow: hidden;
+
+    border-left: 1px solid #000;
+}
+
+    #outer:hover .inner{
+        width: 13.2vw;
+        background-color: rgba(0,0,0,0.04);
+    }
+
+    .inner:hover {
+        width: 40vw !important;
+        background-color: rgba(255,255,255,1) !important;
+    }
+
+    .inner:first-child {
+        border-left: 0px solid black;
+    }
+
+    .inner span{
+        margin-top: 10vh;
+        display: block;
+        line-height: 10vh;
+    }
+
+    .inner p {
+        line-height: 20px;
+        font-family: Josefin;
+        font-size: 12pt;
+        height: auto;
+
+        padding: 10px 20px;
+    }
+
+    .inner a {
+        text-decoration: none;
+        color: #000;
+        border:1px solid #000;
+
+        font-size: 20px;
+        padding: 10px 20px; 
+        font-family: Josefin;
+    }
+
+    .inner a:hover {
+        background-color: #000;
+        color: #fff;
+    }
+
+    .inner img {
+        height: 50vh;
+        margin-left: 30%;
+        display: block;
+    }
+
+    .inner .center {
+        height: 50vh;
+        /*background-color: rgba(0,0,0,0.4);*/
+
+        background-position: center;
+        background-size: cover;
+    }
+/* visuals only */
+
+#one {
+
+    background-image: url('img/roadside.jpg');
+}
+
+#two {
+
+    background-image: url('img/snowmount.jpg');
+}
+
+#thr {
+
+    background-image: url('img/snowtree.jpg');
+}
+
+#BMW {
+    background-image: url('../img/sites/bmw-showcase.png');
+}
