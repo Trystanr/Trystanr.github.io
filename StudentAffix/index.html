@@ -1,50 +1,213 @@
 <html>
 
 	<head>
-		<title>Watson</title>
+		<title>Student Affix</title>
 		<link rel="stylesheet" type="text/css" href="css/main.css">
 	</head>
 	<body>
-		<div id="container">
-			<h1>NSFAS Bursary Application</h1>
+		<script
+		  src="https://code.jquery.com/jquery-3.2.1.min.js"
+		  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+		  crossorigin="anonymous"></script>
 
-			<div id="register-form">
+		<div id="container-land">
+			<!-- <h1>Student Affix</h1> -->
+
+			<!-- <ul id="nav-fixed">
+				<li>home</li>
+				<li>students</li>
+				<li>companies</li>
+			</ul> -->
+
+			<ul id="nav">
+				<a href="#"><li>home</li></a>
+				<a href="#stu-cont-anchor"><li>students</li></a>
+				<a href="#co-cont-anchor"><li>companies</li></a>
+			</ul>
+
+			<div id="land-main">
+				<h1>Your future. <br>In your hands.</h1>
+				<p>
+				The past is known.
+				<br>
+				The future is uncertain. 
+				<br>
+				The solution to work experience is here.
+				<br>
+				Play a part in how you will mold yourself,
+				<br>
+				while the time is available.
+				</p>
+
+				<a href="#stu-cont-anchor" id="land-main-btn">Students</a>
+
 				
-				<iframe src="http://www.nsfas.org.za/content/downloads/2017%20NSFAS%20Application%20Form.pdf"></iframe>
-
 			</div>
-			<div id="watson-form">
-				<ul id="watson-convo">
-					<li class="watson">Hi my name is Watson. How can I help you?</li>
-					<li class="filler"></li>
-					<li class="user">hello</li>
-					<li class="filler"></li>
-					<li class="watson">Want to know what I can do for you?</li>
-					<li class="filler"></li>
-					<li class="user">yeah</li>
-					<li class="filler"></li>
-					<li class="watson">I can <span class=tag>CHANGE<span> your details. If you're an <span class=tag>INTERNATIONAL</span> or <span class=tag>LOCAL</span> student, I can <span class=tag>REVIEW</span> your application status. I can tell you the status of your <span class=tag>FEES</span>.</li>
-					<li class="filler"></li>
-					<li class="user">please can you help me change my details</li>
-					<li class="filler"></li>
-					<li class="watson">What do you want to change?</li>
-					<li class="filler"></li>
-					<li class="user">my name</li>
-					<li class="filler"></li>
-					<li class="watson">What do you want to change your name to?</li>
-					<li class="filler"></li>
-					<li class="user">kamo motaung</li>
-					<li class="filler"></li>
-					<li class="watson">Okay, I changed your name to kamo motaung</li>
+			<!-- <div id="land-inner">
+				
+			</div> -->
+
+			
+		</div>
+
+		<hr id="stu-cont-anchor" style="border-color: transparent;">
+		<!-- <div id="student-contact" class="contact-land">
+				<h2>For students.</h1>
+				<p>Simply enter your details, and we will let you know when the platform is ready for your own personal jobs.</p>
+
+				<form action="student-contact.php" method="post" id="studentContactForm">
+
+				        <div>
+				            <label for="student-name">Name:</label>
+				            <input type="text" name="name" id="student-name" placeholder="John" required>
+				        </div>
+				        
+				        <input type="submit" value="Send">
+
+				</form>
+		</div> -->
+
+
+		<div id="contact-student" class="contact-land">
+			<div id="contact-student-left">
+				<h3>Your Details</h3>
+
+				<form action="student-contact.php" method="post" id="studentContactForm">
+
+				        <div class="form-left">
+				             <label for="student-name">First name:</label>
+				            <input type="text" name="name" id="student-name" placeholder="John" required>
+
+				        </div>
+
+				        <div class="form-right">
+				            <label for="student-surname">Last name:</label>
+				            <input type="text" name="surname" id="student-surname" placeholder="Doe" required>
+				        </div>
+
+				        <div>
+				        	<label for="student-email">Email Address:</label>
+				        	<input type="email" name="email" id="student-email" placeholder="john.doe@gmail.com" required>
+				        </div>
+
+				        <div>
+				        	<label for="student-phone">Telephone Number:</label>
+				        	<input type="tel" name="phone" id="student-phone" placeholder="082-123-4567" required>
+				        </div>
+
+				        <div>
+				        	<label for="student-study">What are you studying?:</label>
+				        	<input type="text" name="study" id="student-study" placeholder="BCom Business Management" required>
+				        </div>
+
+				        <div>
+				        	<label for="student-place">Where are you studying?:</label>
+				        	<input type="text" name="place" id="student-place" placeholder="University of Johannesburg" required>
+				        </div>
+				        
+				        <input type="submit" value="Send">
+
+				</form>
+			</div>
+
+			<div id="contact-student-right">
+				<h2>For students.</h1>
+				<p>Simply enter your details, and we will let you know when the platform is ready for your own personal jobs.</p>
+			</div>
+		</div>
+
+	<!-- 	<div id="company-contact" class="contact-land">
+				<h2>For companies.</h1>
+				<p>Simply enter your details, and we will schedule a meeting so that your future employees will have a bright start.</p>
+		</div> -->
+
+		<hr id="co-cont-anchor">
+
+		<div id="contact-student" class="contact-land">
+			<div id="contact-student-left">
+				<h3>Your Details</h3>
+
+				<form action="co-contact.php" method="post" id="studentContactForm">
+
+				        <div class="form-left">
+				             <label for="co-name">First name:</label>
+				            <input type="text" name="name" id="co-name" placeholder="John" required>
+
+				        </div>
+
+				        <div class="form-right">
+				            <label for="co-surname">Last name:</label>
+				            <input type="text" name="surname" id="co-surname" placeholder="Doe" required>
+				        </div>
+
+				        <div>
+				        	<label for="co-email">Email Address:</label>
+				        	<input type="email" name="email" id="co-email" placeholder="john.doe@gmail.com" required>
+				        </div>
+
+				        <div>
+				        	<label for="co-phone">Telephone Number:</label>
+				        	<input type="tel" name="phone" id="co-phone" placeholder="082-123-4567" required>
+				        </div>
+
+				        <div>
+				        	<label for="co-industry">What is your companies industry?:</label>
+				        	<input type="text" name="industry" id="co-industry" placeholder="Commerce" required>
+				        </div>
+
+				        <div>
+				        	<label for="co-position">Where position is available for filling?:</label>
+				        	<input type="text" name="position" id="co-position" placeholder="Salesperson" required>
+				        </div>
+				        
+				        <input type="submit" value="Send">
+
+				</form>
+			</div>
+
+			<div id="contact-student-right">
+				<h2>For companies.</h1>
+				<p>Simply enter your details, and we will schedule a meeting so that your future employees will have a bright start.</p>
+			</div>
+		</div>
+
+		<div id="footer">
+			<div class="footer-item">
+				<h3></h3>
+				<ul>
+					<a href="#"><li>home</li></a>
+					<a href="#stu-cont-anchor"><li>students</li></a>
+					<a href="#co-cont-anchor"><li>companies</li></a>
 				</ul>
-
-
-
 			</div>
-			<input id="watson-input" placeholder="Type to chat"></input>
+			<div class="footer-item">
+				<h3>Trystan Rivers</h3>
+				<ul>
+					<li>developer</li>
+					<li>+27 82 827 9756</li>
+					<!-- <li>companies</li> -->
+				</ul>
+			</div>
+			<div class="footer-item">
+				<h3>Kamo Motaung</h3>
+				<ul>
+					<li>co founder</li>
+					<li>+27 83 635 1491</li>
+					<!-- <li>companies</li> -->
+				</ul>
+			</div>
+			<div class="footer-item">
+				<h3>Ruben Mpanya</h3>
+				<ul>
+					<li>co founder</li>
+					<li>+27 79 077 2311</li>
+					<!-- <li>companies</li> -->
+				</ul>
+			</div>
 		</div>
 
 		<script src="js/script.js"></script>
+
 	</body>
 
 </html>

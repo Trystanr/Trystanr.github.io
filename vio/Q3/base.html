@@ -5,25 +5,68 @@
     <meta name="description" content="">
     <meta name="author" content="Trystan Rivers">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
 </head>
 
 <body>
     <h1>LIL UZI VERT</h1>
-
-    <img src="img/cassette.png">
-
+    <!-- <img src="img/cassette.gif"> -->
     <ul>
-    	<li>Canadian Goose</li>
-    	<li>Hi Roller</li>
-    	<li>Money Longer</li>
-    	<li>Grab The Wheel</li>
-    	<li>You Was Right</li>
-    	<li>Baby Are You Home</li>
-    	<li>Ps And Qs</li>
-    	<li>Team Rocket</li>
-    	<li>Scott And Ramona</li>
-    	<li><a href="http://www.google.com">XO TOUR Llif3</a></li>
+        <li>
+            <img src="img/cassette.gif">
+            <span>LUV Scars K.o  1600</span>
+        </li>
+        <li>
+            <img src="img/cassette.gif">
+            <span>XO YOUR LLIF3 [Explicit]</span>
+        </li>
+        <li>
+            <img src="img/cassette.gif">
+            <span>Boring S#!t</span>
+        </li>
+        <li>
+            <img src="img/cassette.gif">
+            <span>YSL</span>
+        </li>
+        <a href="#vidboi">
+        <li onclick="playVid()" id="selected">
+            <img src="img/cassette.gif">
+            <span>XO TOUR LLIF3 [Explicit]</span>
+        </li>
+        </a>
     </ul>
+
+    <video id="vidboi" poster="img/loopvid.gif">
+      <source src="vid/test.mp4" type="video/mp4">
+      <!-- <source src="vid/out.avi" type="video/avi"> -->
+        Your browser does not support the video tag.
+    </video>
+
+    <script type="text/javascript">
+        var vid = document.getElementById("vidboi");
+
+        function playVid() { 
+            // alert("fuck"); 
+            
+
+            if (vid.paused) {
+                vid.play();
+            } else {
+                vid.pause();
+            }
+        }
+
+        $(document).on('click', 'a', function(event){
+            event.preventDefault();
+
+            $('html, body').animate({
+                scrollTop: $( $.attr(this, 'href') ).offset().top-50
+            }, 500);
+        });
+    </script>
 </body>
 
 </html>
