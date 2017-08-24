@@ -24,9 +24,9 @@
 				<li>link 3</li>
 			</ul>
 		</div>
-		<div style="margin-top:10vh;margin-left:20vw;width:60vw;height: 200vh">
+		<div style="margin-top:20vh;margin-left:20vw;width:60vw;height: 200vh">
 			
-			<a class="content-head" data-toggle="collapse" href="#content-ul" aria-expanded="false" aria-controls="content-ul">
+			<!-- <a class="content-head" data-toggle="collapse" href="#content-ul">
 				<span class="oi oi-folder"></span>folder
 			</a>
 			<ul id="content-ul" class="collapse show">
@@ -46,53 +46,90 @@
 				<li>item</li>
 				<li>item</li>
 				</li>
-			</ul>
-			
-			<?PHP
-			  function getFileList($dir)
-			  {
-			    // array to hold return value
-			    $retval = array();
+			</ul> -->
+			<div id="folder">
+			<?php
+			// Function to sort given values alphabetically
+			function alphasort($a, $b) {
+				return strcasecmp($a->getPathname(), $b->getPathname());
+			}
+			// Class to put forward the values for sorting
+			class SortingIterator implements IteratorAggregate {
+				private $iterator = null;
+				public function __construct(Traversable $iterator, $callback) {
+					$array = iterator_to_array($iterator);
+					usort($array, $callback);
+					$this->iterator = new ArrayIterator($array);
+				}
+				public function getIterator() {
+				return $this->iterator;
+				}
+			}
+			// Get a full list of dirs & files and begin sorting using above class & function
+			$path = $_SERVER['DOCUMENT_ROOT'];
+			$objectList = new SortingIterator(new RecursiveIteratorIterator(new RecursiveDirectoryIterator($path), RecursiveIteratorIterator::SELF_FIRST), 'alphasort');
+			// With that done, create arrays for out final ordered list and a temp array of files to copy over
+			$finalArray = $tempArray =  array();
+			// To start, push folders from object into finalArray, files into tempArray
+			foreach ($objectList as $objectRef) {
+				$fileFolderName = rtrim(substr($objectRef->getPathname(), strlen($path)),"..");
+				if ($objectRef->getFilename()!="." && $fileFolderName[strlen($fileFolderName)-1]!="/") {
+						$fileFolderName!="/" && is_dir($path.$fileFolderName) ? array_push($finalArray,$fileFolderName) : array_push($tempArray,$fileFolderName);
+				}
+			}
+			// Now push root files onto the end of finalArray and splice from the temp, leaving only files that reside in subsirs
+			for ($i=0;$i<count($tempArray);$i++) {
+				if (count(explode("/",$tempArray[$i]))==2) {
+					array_push($finalArray,$tempArray[$i]);
+					array_splice($tempArray,$i,1);
+					$i--;
+				}
+			}
+			// Lastly we push remaining files into the right subdirs in finalArray
+			for ($i=0;$i<count($tempArray);$i++) {
+				$insertAt = array_search(dirname($tempArray[$i]),$finalArray)+1;
+				for ($j=$insertAt;$j<count($finalArray);$j++) {
+					if (	strcasecmp(dirname($finalArray[$j]), dirname($tempArray[$i]))==0 &&
+						strcasecmp(basename($finalArray[$j]), basename($tempArray[$i]))<0 ||
+						strstr(dirname($finalArray[$j]),dirname($tempArray[$i]))) {
+						$insertAt++;
+					}
+				}
+				array_splice($finalArray, $insertAt, 0, $tempArray[$i]);
+			}
+			// Finally, we have our ordered list, so display in a UL
+			$dirCount = 0;
 
-			    // add trailing slash if missing
-			    if(substr($dir, -1) != "/") $dir .= "/";
+			echo "<ul>\n<li>/</li>\n";
+			$lastPath="";
+			for ($i=0;$i<count($finalArray);$i++) {
+				$fileFolderName = $finalArray[$i];
+				$thisDepth = count(explode("/",$fileFolderName));
+				$lastDepth = count(explode("/",$lastPath));
+				
+				if ($thisDepth > $lastDepth) {
+					$dirCount++;
+					echo "<a class='content-head' data-toggle='collapse' href=#ul".$dirCount."><span class='oi oi-plus'></span></a>";
+					echo "<ul id=ul".$dirCount." class='collapse'>\n";
+				}
+				if ($thisDepth < $lastDepth) {
+					for ($j=$lastDepth;$j>$thisDepth;$j--) {
+						
+						echo "</ul>\n";
+					}
+				}
+				echo "<li>".basename($fileFolderName)."</li>\n";
 
-			    // open pointer to directory and read list of files
-			    $d = @dir($dir) or die("getFileList: Failed opening directory $dir for reading");
-			    while(false !== ($entry = $d->read())) {
-			      // skip hidden files
-			      if($entry[0] == ".") continue;
-			      if(is_dir("$dir$entry")) {
-			        $retval[] = array(
-			          "name" => "$dir$entry/",
-			          "type" => filetype("$dir$entry"),
-			          "size" => 0,
-			          "lastmod" => filemtime("$dir$entry")
-			        );
-			      } elseif(is_readable("$dir$entry")) {
-			        $retval[] = array(
-			          "name" => "$dir$entry",
-			          "type" => mime_content_type("$dir$entry"),
-			          "size" => filesize("$dir$entry"),
-			          "lastmod" => filemtime("$dir$entry")
-			        );
-			      }
-			    }
-			    $d->close();
-
-			    return $retval;
-			  }
-
-			  $dirlist = getFileList("images");
-			   echo "<pre>",print_r($dirlist),"</pre>";
+				$lastPath = $fileFolderName;
+			}
+			echo "</ul>\n</ul>";
 			?>
-
+			</div>
 		</div>
 	</div>
 	<script src="js/vendor/jquery.js"></script>
-
-
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
 
 	<script type="text/javascript">
 	function sticky_relocate() {
