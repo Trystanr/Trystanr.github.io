@@ -26,5 +26,12 @@ code {
 }
 
 .navbar-light .navbar-nav .nav-link.active {
-	
+
+}
+
+#reset-this-parent {
+  all: initial;
+  * {
+    all: unset;
+  }
 }
