@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body data-spy="scroll" data-target="#navbar-example">
-    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+<body data-spy="scroll" data-target="#main-navbar">
+    <nav class="navbar navbar-expand-lg navbar-expand-md navbar-light bg-light sticky-top" id="main-navbar" style="padding-left:10vw;">
         <a class="navbar-brand" href="#">
-            <img src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+            <img src="img/icn/logo.svg" width="30" height="30" alt="">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link" href="#introduction-nav">Introduction</a>
+                    <a class="nav-link rounded" href="#introduction-nav">Introduction</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="http://trystanr.github.io" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -52,7 +52,7 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-3">Web Tutorial</h1>
-            <p class="lead">Welcome to my custom rolled tutorial to introduce you to web concepts and how to go about making your own website.</p>
+            <p class="lead">Learn how a site works, get introduced to web concepts and make your first website.</p>
         </div>
     </div>
     <div class="container" id="introduction-nav">
@@ -69,12 +69,12 @@
                     </div>
                     <div class="col-md-4">
                         <h3><a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank"><span class="oi oi-link-intact lead"></span></a> Google Chrome</h3>
-                        <img src="img/scrn/chrome.png" class="img-fluid" alt="Responsive image">
+                        <img src="img/scrn/chrome2.png" class="img-fluid" alt="Responsive image">
                         <p>Google Chrome is a fully featured browser which is the current standard in web usage and development. With intuitive developer tools, testing is a breeze and feels quick and responsive.</p>
                     </div>
                 </div>
 
-                <h1>Introduction</h1>
+                <h1 style="margin-top: 10vh;">Web Components</h1>
                 <p>A webpage consists of three components:</p>
                 <div class="container">
                     <div class="row">
@@ -172,7 +172,8 @@ Hello World</code>
 
                 <h1 id="html-element-nav">Elements</h1>
                 <p>Now that you have a basic web page down, you can start experimenting with different elements, try out a combination of any of these elements, and just have fun with it, seeing what each one looks like.</p>
-
+                <br/>
+                <h3>Text Elements</h3>
                 <span class="code-head rounded-top">Text Elements Source</span>
                 <pre class="rounded-bottom">
 <code class="html">&lt;h1&gt;Header level 1&lt;/h1&gt;

@@ -20,3 +20,11 @@ code {
 	background-color: rgba(0,0,0,.03);
 	color: rgba(0,0,0,0.5);
 }
+
+.disabled {
+	cursor: default;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+	
+}
