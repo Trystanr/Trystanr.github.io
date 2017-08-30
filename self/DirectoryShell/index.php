@@ -24,31 +24,20 @@
 				<li>link 3</li>
 			</ul>
 		</div>
-		<div style="margin-top:20vh;margin-left:20vw;width:60vw;height: 200vh">
+		<div style="margin-top:10vh;margin-left:20vw;width:60vw;margin-bottom: 20vh">
 			
-			<!-- <a class="content-head" data-toggle="collapse" href="#content-ul">
-				<span class="oi oi-folder"></span>folder
-			</a>
-			<ul id="content-ul" class="collapse show">
-				<li><span class="oi oi-file"></span>item</li>
-				<li><span class="oi oi-image"></span>item</li>
-				<li>item</li>
-				<li>
-					<a class="content-head" data-toggle="collapse" href="#content-ul1" aria-expanded="false" aria-controls="content-ul1">
-						folder
-					</a>
-					<ul id="content-ul1" class="collapse">
-						<li>item</li>
-						<li>item</li>
-						<li>item</li>
-						<li>item</li>
-					</ul>
-				<li>item</li>
-				<li>item</li>
-				</li>
-			</ul> -->
+			<div id="folder-top">
+				<h2>Folder parent</h2>
+
+			</div>
+
 			<div id="folder">
 			<?php
+			function is_dir_empty($dir) {
+			  if (!is_readable($dir)) return NULL; 
+			  return (count(scandir($dir)) == 2);
+			}
+			
 			// Function to sort given values alphabetically
 			function alphasort($a, $b) {
 				return strcasecmp($a->getPathname(), $b->getPathname());
@@ -100,7 +89,7 @@
 			// Finally, we have our ordered list, so display in a UL
 			$dirCount = 0;
 
-			echo "<ul>\n<li>/</li>\n";
+			echo "<ul id='ulparent'>\n<li class='folder-parent'><a class='content-head' data-toggle='collapse' href='#ul0'><span class='oi oi-caret-bottom'></span>directory</a></li>\n";
 			$lastPath="";
 			for ($i=0;$i<count($finalArray);$i++) {
 				$fileFolderName = $finalArray[$i];
@@ -108,8 +97,7 @@
 				$lastDepth = count(explode("/",$lastPath));
 				
 				if ($thisDepth > $lastDepth) {
-					$dirCount++;
-					echo "<a class='content-head' data-toggle='collapse' href=#ul".$dirCount."><span class='oi oi-plus'></span></a>";
+					
 					echo "<ul id=ul".$dirCount." class='collapse'>\n";
 				}
 				if ($thisDepth < $lastDepth) {
@@ -118,7 +106,46 @@
 						echo "</ul>\n";
 					}
 				}
-				echo "<li>".basename($fileFolderName)."</li>\n";
+				if (is_dir(getcwd().$finalArray[$i])) {
+					$dirCount++;
+
+					echo "<li class='folder-parent'>";
+					echo "<a class='content-head' data-toggle='collapse' ";
+					echo "href=#ul".($dirCount);
+					
+
+					if (is_dir_empty(getcwd().$finalArray[$i])) {
+					  echo ">"; 
+					}else{
+					  echo "><span class='oi oi-caret-bottom'></span>";
+					}
+					
+					echo basename($fileFolderName)."</a>";
+					echo "</li>\n";
+				} else {
+					$extension = explode(".", basename($fileFolderName));
+					
+					echo "<li>";
+
+					switch (end($extension)) {
+						case 'jpg':
+						case 'jpeg':
+						case 'png':
+							echo "<span class='oi oi-image'></span>";
+							break;
+						case 'css':
+						case 'js':
+						case 'php':
+							echo "<span class='oi oi-book'></span>";
+							break;
+						
+						default:
+							echo "<span class='oi oi-file'></span>";
+							break;
+					}
+
+					echo basename($fileFolderName)."</li>\n";
+				}
 
 				$lastPath = $fileFolderName;
 			}

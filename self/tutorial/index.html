@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>HTML Tutorial</title>
+    <link rel="shortcut icon" href="img/icn/circle.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/vendor/open-iconic-bootstrap.css">
+    <link rel="stylesheet" href="css/vendor/atom-one-light.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-spy="scroll" data-target="#navbar-example">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+        <a class="navbar-brand" href="#">
+            <img src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" href="#introduction-nav">Introduction</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://trystanr.github.io" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          HTML
+                        </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#html-nav">Basics</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          CSS
+                        </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#html-nav">Basics</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Javascript
+                        </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="#html-nav">Basics</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3">Web Tutorial</h1>
+            <p class="lead">Welcome to my custom rolled tutorial to introduce you to web concepts and how to go about making your own website.</p>
+        </div>
+    </div>
+    <div class="container" id="introduction-nav">
+        <div class="row">
+            <div class="col">
+            	<h1>Tools</h1>
+                <p>The following tools offer the basics of web development:</p>
+
+                <div class="row">
+                	<div class="col-md-4">
+                        <h3><a href="https://www.sublimetext.com/" target="_blank"><span class="oi oi-link-intact lead"></span></a> Sublime Text</h3>
+                        <img src="img/scrn/sublime.png" class="img-fluid" alt="Responsive image">
+                        <p>Sublime text is an all in one text editor packed with features that make web development a blast. You can even add extensions which increase the speed of development greatly.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h3><a href="https://www.google.com/chrome/browser/desktop/index.html" target="_blank"><span class="oi oi-link-intact lead"></span></a> Google Chrome</h3>
+                        <img src="img/scrn/chrome.png" class="img-fluid" alt="Responsive image">
+                        <p>Google Chrome is a fully featured browser which is the current standard in web usage and development. With intuitive developer tools, testing is a breeze and feels quick and responsive.</p>
+                    </div>
+                </div>
+
+                <h1>Introduction</h1>
+                <p>A webpage consists of three components:</p>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-12">
+                            <div class="card mb-4" style="max-width: 20rem;">
+                                <div class="card-header"><span class="oi oi-wrench"></span> HTML</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Skeleton</h4>
+                                    <p class="card-text">
+                                        <i>HyperText Mark-up Language</i>
+                                        <br/> HTML describes the structure of Web pages using markup represented by tags.
+                                    </p>
+                                    <a href="#html-nav" class="btn btn-primary">Learn</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="card mb-4" style="max-width: 20rem;">
+                                <div class="card-header"><span class="oi oi-brush"></span> CSS</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Styling</h4>
+                                    <p class="card-text">
+                                        <i>Cascading Style Sheets</i>
+                                        <br/> CSS describes how HTML elements are to be displayed on screen, paper, or in other media.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="card mb-4" style="max-width: 20rem;">
+                                <div class="card-header"><span class="oi oi-pencil"></span> JavaScript</div>
+                                <div class="card-body">
+                                    <h4 class="card-title">Scripting</h4>
+                                    <p class="card-text">
+                                        <i>JavaScript</i>
+                                        <br/> JavaScript makes HTML pages more dynamic and allows users to interact with your page.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="jumbotron jumbotron-fluid" id="html-nav">
+        <div class="container">
+            <h1 class="display-3">HTML</h1>
+            <p class="lead">HyperText Mark-up Language.</p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Basics</h1>
+                <p>Let's look at a barebones HTML file:</p>
+
+                <span class="code-head rounded-top">index.html</span>
+                <pre class="rounded-bottom">
+<code class="html">&lt;!DOCTYPE html&gt;
+	&lt;head&gt;
+		&lt;meta charset="utf-8"&gt;
+		&lt;title&gt;Title&lt;/title&gt;
+	&lt;/head&gt;
+	&lt;body&gt;
+		&lt;p&gt;hello world&lt;/p&gt;
+	&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+                <p>To view this page in your browser, simply save the file as <kbd>index.html</kbd> and double click the file.
+                <br/>
+                You should see the following:</p>
+
+                <span class="code-head rounded-top">Title</span>
+                <pre class="rounded-bottom">
+                    <code class="nohighlight">
+Hello World</code>
+                </pre>
+
+                <p>Let's look at what we have here.</p>
+                <p><code class="html" style="color: #4078f2;">!DOCTYPE html</code> indicates that this web page is written in html.
+                <br/>
+                <code class="html" style="color: #e45649;">head</code> contains the web page title.
+                <br/>
+                <code class="html" style="color: #e45649;">meta <span style="color: #986801;">charset</span><span style="color: #383a42;">=</span><span style="color: #50a14f;">"utf-8"</span></code> specifies the character encoding for the HTML document.
+                <br/>
+                <code class="html" style="color: #e45649;">title</code> contains meta data (data about data) about the page.
+                <br/>
+                <code class="html" style="color: #e45649;">body</code> contains the content of the web page.
+                <br/>
+                <code class="html" style="color: #e45649;">p</code> is a paragraph element.
+                </p>
+
+
+                <h1>Elements</h1>
+                <p>Now that you have a basic web page down, you can start experimenting with different elements, try out a combination of any of these elements, and just have fun with it, seeing what each one looks like.</p>
+
+                <span class="code-head rounded-top">Text Elements Source</span>
+                <pre class="rounded-bottom">
+<code class="html">&lt;h1&gt;Header level 1&lt;/h1&gt;
+&lt;h2&gt;Header level 2&lt;/h2&gt;
+&lt;h3&gt;Header level 3&lt;/h3&gt;
+&lt;h4&gt;Header level 4&lt;/h4&gt;
+&lt;h5&gt;Header level 5&lt;/h5&gt;
+&lt;p&gt;Paragraph&lt;br/&gt;with&lt;br&gt;breaks&lt;/p&gt;
+&lt;p&gt;Paragraph with &lt;i&gt;italics&lt;/i&gt;, &lt;b&gt;bold&lt;/b&gt;, &lt;b&gt;&lt;i&gt;bolded italics&lt;/i&gt;&lt;/b&gt;.&lt;/p&gt;</code></pre>
+
+                <span class="code-head rounded-top">Text Elements Output</span>
+                <pre class="rounded-bottom">
+                    <code class="nohighlight">
+<h1>Header level 1</h1>
+<h2>Header level 2</h2>
+<h3>Header level 3</h3>
+<h4>Header level 4</h4>
+<h5>Header level 5</h5>
+<p>Paragraph<br/>with<br>breaks</p>
+<p>Paragraph with <i>italics</i>, <strong>bold</strong>, <strong><i>bolded italics</i></strong>.</p>
+<a href="http://www.google.com">Link</a>
+<br/>
+<time>10:59</time>
+<br/>
+</code></pre>
+
+            </div>
+        </div>
+    </div>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/highlight.pack.js"></script>
+
+    <script>hljs.initHighlightingOnLoad();</script>
+</body>
+
+</html>
