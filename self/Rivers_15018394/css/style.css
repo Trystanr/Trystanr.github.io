@@ -1,0 +1,41 @@
+pre {
+	background-color: #e9ecef;
+	border-bottom: 1px solid rgba(0,0,0,.125);
+	border-right: 1px solid rgba(0,0,0,.125);
+	border-left: 1px solid rgba(0,0,0,.125);
+
+	padding-left: 40px;
+}
+
+code {
+	background: #e9ecef !important;
+}
+
+.code-head {
+	display: block;
+
+	padding:10px 20px;
+
+	border: 1px solid rgba(0,0,0,.125);
+	background-color: rgba(0,0,0,.03);
+	color: rgba(0,0,0,0.5);
+}
+
+.disabled {
+	cursor: default;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+
+}
+
+#reset-this-parent {
+  all: initial;
+  * {
+    all: unset;
+  }
+}
+
+.dropdown-menu {
+	background-color: #f8f9fa;
+}

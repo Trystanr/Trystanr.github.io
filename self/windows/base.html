@@ -1,0 +1,113 @@
+<html>
+
+<head>
+    <title>Windows 95</title>
+    <meta name="description" content="">
+    <meta name="author" content="Trystan Rivers">
+    <link rel='shortcut icon' href='img/win-icon.png' type='image/x-icon' />
+    <link rel="stylesheet" type="text/css" href="css/base.css">
+    <link rel="stylesheet" type="text/css" href="css/window.css">
+    <link rel="stylesheet" type="text/css" href="css/taskbar.css">
+    <link rel="stylesheet" type="text/css" href="css/taskbar-menu.css">
+    <link rel="stylesheet" type="text/css" href="css/control.css">
+    <link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+    <script src="js/vendor/jquery.js"></script>
+    <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div id="startup" style="display: none">
+        <audio id="startup-sound">
+          <source src="media/audio/startUp.mp3" type="audio/mpeg">
+        </audio>
+    </div>
+
+    <div id="shutdown">
+    </div>
+
+    <div class="resp-border" id="notepad" >
+
+        <div class="resp-inner">
+            <div class="resp-head">
+                <img src="img/accessories-icon.png">
+                <span>Application</span>
+                <div class="rasp-tools">
+                    <img src="img/close-button.png" onclick="notepadClose(this)">
+                    <img src="img/maximize-button.png">
+                    <img src="img/minimize-button.png">
+                </div>
+            </div>
+            <div class="resp-body" id="resp-loader">
+                <br>
+                <!-- <a href="#" class="control-button">Cancel</a> -->
+                <!-- <img src="img/trystan.png" style="width: 10vw;margin-left: auto; margin-right: auto; display: block;">
+                <p style="text-align: center;">About me</p> -->
+
+                <!-- <iframe src="https://www.w3schools.com"></iframe> -->
+            </div>
+            <!--  <div class="resp-body" contenteditable="true">
+            </div> -->
+        </div>
+    </div>
+
+    <div id="taskbar">
+        <div id="taskbar-windows" onclick="toggleTaskbar()">
+            <img src="img/start.png" id="taskbar-start">
+        </div>
+        <div id="taskbar-menu">
+            <div id="taskbar-menu-inner">
+                <div id="taskbar-menu-left">
+                    <span>Trystan<span>96</span></span>
+                </div>
+                <ul>
+                    <li>
+                        <img src="img/programs-icon.png" class="menu-left">
+                        <span>Portfolio</span>
+                        <div class="menu-right"></div>
+                        <ul>
+                            <div class="menu-small-inner">
+                                <li>
+                                    <img src="img/accessories-icon.png" class="menu-left-small">
+                                    <span>About Me</span>
+                                    <div class="menu-right-small"></div>
+                                    <ul>
+                                        <div class="menu-small-inner">
+                                            <li onclick="newNotepad()">
+                                                <img src="img/trystan.png" class="menu-left-small">
+                                                <span>Trystan</span>
+                                            </li>
+                                        </div>
+                                    </ul>
+                                </li>
+                                <!-- <li>
+                                    <img src="img/trystan.png" class="menu-left-small">
+                                	<span>Trystan</span>
+                                </li> -->
+                            </div>
+                        </ul>
+                    </li>
+                    <li>
+                        <img src="img/documents-icon.png" class="menu-left">
+                        <span>Documents</span>
+                        <div class="menu-right"></div>
+                    </li>
+                    <li>
+                        <img src="img/settings-icon.png" class="menu-left">
+                        <span>Settings</span>
+                        <div class="menu-right"></div>
+                    </li>
+                    <li onclick="shutDown()">
+                        <img src="img/shutdown-icon.png" class="menu-left">
+                        <span>Shut Down...</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="taskbar-control"></div>
+    </div>
+    <script>
+    </script>
+</body>
+
+</html>

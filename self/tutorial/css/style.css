@@ -35,3 +35,7 @@ code {
     all: unset;
   }
 }
+
+.dropdown-menu {
+	background-color: #f8f9fa;
+}
