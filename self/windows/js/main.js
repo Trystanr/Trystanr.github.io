@@ -3,6 +3,9 @@ $(document).ready(function() {
     $(window).load(function(){
         $('#startup-sound')[0].addEventListener('ended', function(){
             $('#startup').fadeOut('slow',function(){$(this).remove();});
+
+            initWindows();
+
         });
 
         $('#startup-sound')[0].play();
@@ -21,6 +24,21 @@ $(document).ready(function() {
         }
     })
 });
+
+function initWindows() {
+    $('#a' + iNotepadCounter).draggable({
+        handle: $(noteHead),
+        opacity: 0.9,
+        scroll: false,
+        containment: "none"
+    }).resizable({
+        handles: "n, e, s, w, se",
+        containment: "parent",
+        minHeight: 200,
+        minWidth: 240,
+        alsoResize: woah
+    });
+}
 
 var iNotepadCounter = 0;
 
