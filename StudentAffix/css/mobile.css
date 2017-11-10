@@ -19,7 +19,7 @@ body {
     z-index: 9999;
     display: block;
     margin: 0;
-    width: 100%;
+    width: 100vw;
     /*min-width: 1024px;*/
     height: 80px;
     /*max-height: 44px;*/
@@ -31,7 +31,7 @@ body {
     -ms-user-select: none;
     user-select: none;
     -webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px)
+    backdrop-filter: saturate(180%) blur(20px);
 }
 
 #navbar ul {
