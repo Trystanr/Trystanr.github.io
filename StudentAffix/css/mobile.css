@@ -54,6 +54,8 @@ body {
     margin-top: 20px;
 
     border-radius: 10px;
+
+    list-style: none;
 }
 
 #navbar ul li#alert {
