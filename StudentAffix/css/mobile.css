@@ -20,9 +20,9 @@ body {
     display: block;
     margin: 0;
     width: 100%;
-    min-width: 1024px;
-    height: 48px;
-    max-height: 44px;
+    /*min-width: 1024px;*/
+    height: 80px;
+    /*max-height: 44px;*/
     background: #333;
     background: rgba(0, 0, 0, 0.8);
     font-size: 17px;
@@ -40,13 +40,34 @@ body {
 }
 
 #navbar ul li {
+
     color: #fff;
+    padding: 10px;
 
-    height: 48px;
+    height: 20px;
+    line-height: 18px;
 
-    line-height: 44px;
-    vertical-align: middle;
-    display: inline-block;
+    float: left;
 
-    padding-left: 20px;
+    margin-left: 20px;
+
+    margin-top: 20px;
+
+    border-radius: 10px;
+}
+
+#navbar ul li#alert {
+    background: rgba(255,23,10,1);
+    padding: 10px;
+
+    height: 20px;
+    line-height: 18px;
+
+    float: right;
+
+    margin-right: 20px;
+
+    margin-top: 20px;
+
+    border-radius: 10px;
 }
