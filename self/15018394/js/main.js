@@ -158,7 +158,7 @@ function zoomAndOpen(e) {
         if ($(e).attr('id') == "moloMain") {
             window.location.href = "molocow/Molocow.html";
         } else if ($(e).attr('id') == "remoteMain") {
-            window.location.href = "remote/Index.html";
+            window.location.href = "remote/index.html";
         } else {
             window.location.href = "uzivert/base.html";
         }
