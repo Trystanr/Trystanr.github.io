@@ -1,0 +1,336 @@
+<html>
+
+<head>
+	<title>Windows 95</title>
+	<meta name="description" content="">
+	<meta name="author" content="Trystan Rivers">
+	<link rel='shortcut icon' href='img/win-icon.png' type='image/x-icon' />
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/window.css">
+	<link rel="stylesheet" type="text/css" href="css/taskbar.css">
+	<link rel="stylesheet" type="text/css" href="css/taskbar-menu.css">
+	<link rel="stylesheet" type="text/css" href="css/control.css">
+	<link rel="stylesheet" type="text/css" href="http://code.jquery.com/ui/1.9.2/themes/base/jquery-ui.css">
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/vendor/jquery.zoomooz.min.js"></script>
+	<script src="js/vendor/barba.min.js" type="text/javascript"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script src="js/main.js"></script>
+</head>
+
+<body>
+	<div id="startup" style="display: visible">
+		<audio id="startup-sound">
+		  <source src="media/audio/startUp.mp3" type="audio/mpeg">
+		</audio>
+	</div>
+
+	<div id="shutdown">
+	</div>
+
+	<div class="resp-border" id="molocow-intro" style="display: none">
+
+		<div class="resp-inner">
+			<div class="resp-head">
+				<img src="img/accessories-icon.png">
+				<span>Molocow intro</span>
+				<div class="rasp-tools">
+					<img src="img/close-button.png" onclick="notepadClose(this)">
+					<img src="img/maximize-button.png">
+					<img src="img/minimize-button.png">
+				</div>
+			</div>
+			<div class="resp-body" id="resp-loader" style="overflow: scroll;">
+				<p class="resp-notepad">
+					Molocow was a logo exercise in which we had to develop and improve on the concept of a logo. We had to design and develop a story around the logo which made sense to the viewer. My logo was a cow being absucted, so I decided to implement the space theme.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="resp-border" id="molocow" style="display: none">
+
+		<div class="resp-inner">
+			<div class="resp-head">
+				<img src="img/molocow.png">
+				<span>MoloCow</span>
+				<div class="rasp-tools">
+					<img src="img/close-button.png" onclick="notepadClose(this)">
+					<img src="img/maximize-button.png">
+					<img src="img/minimize-button.png">
+				</div>
+			</div>
+			<div class="resp-body" id="resp-loader" >
+				<a href="#" onclick="openWindow('molocow-intro')" class="innerIntro"></a>
+				<!-- <a href="molocow/Molocow.html" id="moloMain">Project</a> -->
+				<a href="#" id="moloMain" onclick="zoomAndOpen(this)"></a>
+			</div>
+			<!--  <div class="resp-body" contenteditable="true">
+			</div> -->
+		</div>
+	</div>
+
+	<div class="resp-border" id="remote" style="display: none">
+
+		<div class="resp-inner">
+			<div class="resp-head">
+				<img src="img/remote.png">
+				<span>Working Remotely</span>
+				<div class="rasp-tools">
+					<img src="img/close-button.png" onclick="notepadClose(this)">
+					<img src="img/maximize-button.png">
+					<img src="img/minimize-button.png">
+				</div>
+			</div>
+			<div class="resp-body" id="resp-loader">
+				<a href="#" onclick="openWindow('remote-intro')" class="innerIntro"></a>
+				<a href="#" id="remoteMain" onclick="zoomAndOpen(this)"></a>
+			</div>
+			<!--  <div class="resp-body" contenteditable="true">
+			</div> -->
+		</div>
+	</div>
+
+	<div class="resp-border" id="remote-intro" style="display: none">
+
+		<div class="resp-inner">
+			<div class="resp-head">
+				<img src="img/accessories-icon.png">
+				<span>Remote intro</span>
+				<div class="rasp-tools">
+					<img src="img/close-button.png" onclick="notepadClose(this)">
+					<img src="img/maximize-button.png">
+					<img src="img/minimize-button.png">
+				</div>
+			</div>
+			<div class="resp-body" id="resp-loader" style="overflow: scroll;">
+				<p class="resp-notepad">
+					The Working Remotely assignment had us take an infographic and present it to the viewer in an intuitive and interactive fashion. I had to convert an infographic about the benefits of working from your own household.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="resp-border" id="uzivert" style="display: none">
+
+		<div class="resp-inner">
+			<div class="resp-head">
+				<img src="img/uzivert.png">
+				<span>XO TOUR LLIF3</span>
+				<div class="rasp-tools">
+					<img src="img/close-button.png" onclick="notepadClose(this)">
+					<img src="img/maximize-button.png">
+					<img src="img/minimize-button.png">
+				</div>
+			</div>
+			<div class="resp-body" id="resp-loader">
+				<a href="#" onclick="openWindow('uzivert-intro')" class="innerIntro"></a>
+				<a href="#" id="vertMain" onclick="zoomAndOpen(this)"></a>
+			</div>
+		</div>
+	</div>
+
+	<div class="resp-border" id="uzivert-intro" style="display: none">
+
+		<div class="resp-inner">
+			<div class="resp-head">
+				<img src="img/accessories-icon.png">
+				<span>TOUR LLIF3 intro</span>
+				<div class="rasp-tools">
+					<img src="img/close-button.png" onclick="notepadClose(this)">
+					<img src="img/maximize-button.png">
+					<img src="img/minimize-button.png">
+				</div>
+			</div>
+			<div class="resp-body" id="resp-loader" style="overflow: scroll;">
+				<p class="resp-notepad">
+					For this assignment, we had to take a song we enjoyed and turn it into an animated lyric video. I chose XO TOUR LLIF3 by Lil Uzi Vert.
+				</p>
+			</div>
+		</div>
+	</div>
+
+	<div class="resp-border" id="wallpaper-change" style="display: none">
+
+		<div class="resp-inner">
+			<div class="resp-head">
+				<img src="img/accessories-icon.png">
+				<span>Change Wallpaper</span>
+				<div class="rasp-tools">
+					<img src="img/close-button.png" onclick="notepadClose(this)">
+					<img src="img/maximize-button.png">
+					<img src="img/minimize-button.png">
+				</div>
+			</div>
+			<div class="resp-body" id="resp-loader" style="overflow: scroll;">
+				
+				<h1>Choose a colour</h1>
+
+				<ul id="wallColours">
+					<li data-color="008080"></li>
+					<li data-color="800000"></li>
+					<li data-color="800040"></li>
+					<li data-color="804000"></li>
+					<li data-color="800800"></li>
+					<li data-color="408000"></li>
+					<li data-color="400080"></li>
+					<li data-color="000"></li>
+					
+				</ul>
+
+			</div>
+		</div>
+	</div>
+
+	<div class="resp-border" id="trystan-window" style="display: visible;">
+
+		<div class="resp-inner">
+			<div class="resp-head">
+				<img src="img/accessories-icon.png">
+				<span>TRYSTAN</span>
+				<div class="rasp-tools">
+					<img src="img/close-button.png" onclick="notepadClose(this)">
+					<img src="img/maximize-button.png">
+					<img src="img/minimize-button.png">
+				</div>
+			</div>
+			<div class="resp-body" id="resp-loader" style="overflow: scroll;">
+				
+				<h1>TRYSTAN RIVERS</h1>
+				<img src="img/trystan.png">
+
+				<h3>15018394</h3>
+
+				<h4>Welcome to my portfolio! Drag and drop windows, click on icons, use the taskbar. You can even resize windows! Give it a try.</h4>
+			</div>
+		</div>
+	</div>
+
+	<div id="window-icons">
+		<ul>
+			<li onclick="openWindow('molocow')">
+				<a href="#">
+					<img src="img/molocow.png">
+					<span>Molocow</span>
+				</a>
+			</li>
+			<li onclick="openWindow('remote')">
+				<a href="#" >
+					<img src="img/remote.png">
+					<span>Working Remotely</span>
+				</a>
+			</li>
+			<li onclick="openWindow('uzivert')">
+				<a href="#">
+					<img src="img/uzivert.png">
+					<span>XO TOUR LLIF3</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+
+	<div id="taskbar">
+		<div id="taskbar-windows" onclick="toggleTaskbar()">
+			<img src="img/start.png" id="taskbar-start">
+		</div>
+		<div id="taskbar-menu">
+			<div id="taskbar-menu-inner">
+				<div id="taskbar-menu-left">
+					<span>Trystan<span>96</span></span>
+				</div>
+				<ul>
+					<li>
+						<img src="img/programs-icon.png" class="menu-left">
+						<span>Details</span>
+						<div class="menu-right"></div>
+						<ul>
+							<div class="menu-small-inner">
+								<li>
+									<img src="img/accessories-icon.png" class="menu-left-small">
+									<span>About Me</span>
+									<div class="menu-right-small"></div>
+									<ul>
+										<div class="menu-small-inner">
+											<li onclick="newNotepad()">
+												<img src="img/trystan.png" class="menu-left-small">
+												<span>Trystan</span>
+											</li>
+											<li onclick="newNotepad()">
+												<img src="img/trystan.png" class="menu-left-small">
+												<span>What is this?</span>
+											</li>
+										</div>
+									</ul>
+								</li>
+								<!-- <li>
+									<img src="img/trystan.png" class="menu-left-small">
+									<span>Trystan</span>
+								</li> -->
+							</div>
+						</ul>
+					</li>
+					<li>
+						<img src="img/documents-icon.png" class="menu-left">
+						<span>Projects</span>
+						<div class="menu-right"></div>
+						<ul>
+							<div class="menu-small-inner">
+								<li>
+									<img src="img/accessories-icon.png" class="menu-left-small">
+									<span>2017</span>
+									<div class="menu-right-small"></div>
+									<ul>
+										<div class="menu-small-inner">
+											<li onclick="openWindow('molocow')">
+												<img src="img/molocow.png" class="menu-left-small">
+												<span>Molocow</span>
+											</li>
+											<li onclick="openWindow('remote')">
+												<img src="img/remote.png" class="menu-left-small">
+												<span>Working Remotely</span>
+											</li>
+											<li onclick="openWindow('uzivert')">
+												<img src="img/uzivert.png" class="menu-left-small">
+												<span>XO TOUR LLIF3</span>
+											</li>
+										</div>
+									</ul>
+								</li>
+								<!-- <li>
+									<img src="img/trystan.png" class="menu-left-small">
+									<span>Trystan</span>
+								</li> -->
+							</div>
+						</ul>
+					</li>
+					<li>
+						<img src="img/settings-icon.png" class="menu-left">
+						<span>Settings</span>
+						<div class="menu-right"></div>
+						<ul>
+							<div class="menu-small-inner">
+								<li onclick="openWindow('wallpaper-change')">
+									<img src="img/accessories-icon.png" class="menu-left-small">
+									<span>Change wallpaper</span>
+								</li>
+								<!-- <li>
+									<img src="img/trystan.png" class="menu-left-small">
+									<span>Trystan</span>
+								</li> -->
+							</div>
+						</ul>
+					</li>
+					<li onclick="shutDown()">
+						<img src="img/shutdown-icon.png" class="menu-left">
+						<span>Shut Down...</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div id="taskbar-control"></div>
+	</div>
+	<script>
+	</script>
+</body>
+
+</html>

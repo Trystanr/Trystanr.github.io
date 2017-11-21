@@ -16,7 +16,9 @@ $( "#nav-toggle" ).on( "click", function() {
 
 		$("#nav-toggle").html(" <i class='ionicons ion-navicon-round'></i> ");
 
-
+		$("#nav-body li").each( function(e) {
+			$(this).removeClass("fadeInLeft");
+		});
 	} else {
 		//Open menu
 
@@ -25,6 +27,10 @@ $( "#nav-toggle" ).on( "click", function() {
 		$('body').on('scroll mousewheel touchmove', stopScrolling);
 
 		$("#nav-toggle").html(" <i class='ionicons ion-close'></i> ");
+
+		$("#nav-body li").each( function(e) {
+			$(this).addClass("fadeInLeft");
+		});
 	}
 });
 
