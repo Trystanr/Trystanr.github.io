@@ -9,7 +9,9 @@
 // You can also use elements such as calling a paragraph using $( "p" )
 
 // This appends a function to the a element with the id getCoinList
-$( "#getCoinList" ).click(function() {
+$( "#getCoinList" ).click(function(event) {
+	
+	event.preventDefault();
 
 	// $.ajax is used to make an api call with the parameters below
 	// http://api.jquery.com/jquery.ajax/ for more info
