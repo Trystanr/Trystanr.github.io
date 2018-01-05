@@ -96,7 +96,9 @@ body {
 
 @media only screen 
 and (min-device-width : 414px) 
-and (max-device-width : 736px) { 
+and (max-device-width : 736px) 
+and (min-device-width : 375px) 
+and (max-device-width : 667px) { 
 	#getCoinList {
 		margin-left: 10vw;
 		margin-right: 10vw;
