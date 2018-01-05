@@ -1,0 +1,113 @@
+body {
+	font-family: 'Open Sans', sans-serif;
+
+	margin: 0;
+	padding: 0;
+}
+
+#getCoinList {
+	background-color: #2876f7;
+	text-decoration: none;
+
+	padding: 20px 100px;
+
+	margin-top: 10vh;
+
+	display: block;
+
+	margin-left: 40vw;
+	margin-right: 40vw;
+
+	text-align: center;
+
+	color: #fff;
+
+	border-radius: 4px;
+}
+
+#coinSingleDataList {
+	background-color: #f8f9fa;
+
+	padding: 10vh 20vw;
+	list-style: none;
+}
+
+#coinSingleDataList li{
+	display: inline-block;
+
+	height: 10vh;
+	/*width: 10vw;*/
+
+	font-size: 2em;
+
+	clear: both;
+	line-height: 10vh;
+	vertical-align: middle;
+}
+
+#coinSingleDataList li:nth-child(2){
+
+	font-size: 1em;
+	font-weight: 100;
+
+	margin: 0 1vw;
+
+	color: #767680;
+
+}
+
+#coinSingleDataList li:nth-child(3){
+    font-size: 4em;
+    font-weight: 800;
+    color: #767680;
+}
+
+#coinSingleDataList img {
+	width: 10vh;
+	height: 10vh;
+}
+
+
+#coinDataList {
+	background-color: #f8f9fa;
+
+	padding: 2vh 2vw;
+
+	margin: 5vh 5vw;
+	list-style: none;
+
+	border-radius: 10px;
+}
+
+#coinDataList li{
+	color: #767680;
+	padding: 1vh 1vw;
+
+	margin: 0.2vh 1vw;
+
+	list-style: none;
+
+	border-bottom: 2px solid #e2e8f1;
+}
+
+#coinDataList li:last-child{
+	border-bottom: 0;
+}
+
+@media only screen 
+and (min-device-width : 414px) 
+and (max-device-width : 736px) { 
+	#getCoinList {
+		margin-left: 10vw;
+		margin-right: 10vw;
+
+		margin-bottom: 10vh;
+
+		font-size: 4em;
+	}
+
+	#coinSingleDataList li:nth-child(2){
+
+		font-size: 1.5em;
+	}
+}

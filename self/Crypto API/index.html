@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Crypto API Example</title>
+
+	<!-- Font stylesheet -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,800" rel="stylesheet">
+
+	<!-- Css Stylesheet / Only used for stying. Can be ignored -->
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+	<!--
+ 		This link is used to run the code to call the api.
+		I use an a instead of a button because it is easier to style and implement.  
+	-->
+	<a href="#" id="getCoinList">Get coin list</a>
+	
+	<!--
+		Here we have an empty list that will be filled with a single coin once we click the button 
+	-->
+	<ul id="coinSingleDataList">
+
+	</ul>
+
+	<!--
+		Here we have an empty list that will be filled once we click the button 
+	-->
+	<ul id="coinDataList">
+		
+	</ul>
+
+
+	<!-- 
+		jQuery - The purpose of jQuery is to make it much easier to use JavaScript on your website.
+	-->
+	<script src="js/vendor/jquery.js"></script>
+	<!-- 
+		Script - Our own code. Make sure it is underneath the jQuery script.
+	-->
+	<script src="js/script.js"></script>
+</body>
+
+</html>
