@@ -4,6 +4,9 @@ $("form :input").focus(function() {
   $("label").removeClass("labelfocus");
 });
 
+
+//NAV MENU
+
 var bMenuToggle = false;
 
 $( "#nav-toggle" ).on( "click", function() {
@@ -39,3 +42,42 @@ function stopScrolling (e) {
     e.stopPropagation();
     return false;
 }
+
+
+// LOGIN/REGISTER TOGGLE
+
+$("#action-cont a").on("click", function(i) {
+	console.log($(this).index()); // 0 -log in, 1 - register
+
+	$("#action-cont a").each( function(i) {
+		$(this).removeClass('selected');
+	});
+
+	$(this).addClass('selected');
+
+	if ($(this).index() == 0) {
+		// Log in
+		$("#register-cont").hide();
+		$("#login-cont").show();
+	} else {
+		// Register
+		$("#login-cont").hide();
+		$("#register-cont").show();
+	}
+
+});
+
+
+
+$('.job-slider').slick({
+   	infinite: true,
+   	dots: false,
+  	slidesToShow: 1,
+  	slidesToScroll: 3,
+  	centerMode: true,
+  	arrows: false
+});;
+
+
+
+
