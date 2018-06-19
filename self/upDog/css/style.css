@@ -1,5 +1,6 @@
 * {
 	box-sizing: border-box;
+	font-family: 'Roboto';
 }
 
 body {
@@ -14,7 +15,6 @@ body {
 	padding: 0;
 	overflow: hidden;
 	background-color: #f7f7f7;
-	font-family: 'Roboto';
 }
 
 #navbar li {
@@ -68,7 +68,129 @@ body {
 	background-color: #e7e7f2;
 }
 
+
+
+
+
 #content {
-	width: 90vw;
-	margin-left: 5vw;
+	width: 80vw;
+	margin-left: 10vw;
+}
+
+#content-left {
+	width: 40vw;
+	float: left;
+}
+
+#content-right {
+	width: 40vw;
+	float: right;
+}
+
+
+
+#accounts ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	/*background-color: #f7f7f7;*/
+
+}
+
+#accounts li {
+	/*float: left;*/
+	text-transform: uppercase;
+	background-color: #f7f7f7;
+
+	width: 38vw;
+
+	padding: 20px 20px 18px 30px;
+
+	margin-bottom: 20px;
+
+	transition: all 0.08s linear;
+
+	border: 0px solid #34495e;
+}
+
+#accounts li:hover {
+	border: 5px solid #34495e;
+
+	padding: 15px 15px 13px 25px;
+
+	transition: all 0.08s linear;
+
+	cursor: pointer;
+}
+
+.account-info {
+	width: 29vw;
+	display: inline-block;
+}
+
+.account-control {
+	width: 7vw;
+	display: inline-block;
+	vertical-align: top;
+
+	margin-top: 20px;
+}
+
+.account-control a {
+	display: block;
+	color: #44474f;
+	text-align: center;
+
+	padding: 10px 20px;
+	border-radius: 100px;
+	text-decoration: none;
+	background-color: #e7e7f2;
+
+}
+
+#accounts li h6 {
+	margin: 0;
+	padding: 0;
+}
+
+#accounts li h2 {
+	margin: 0;
+	padding: 0;
+
+	font-size: 2em;
+}
+
+#accounts li h3 {
+	margin: 0;
+	padding: 0;
+}
+
+#account-detail {
+	width: 40vw;
+	height: 40vh;
+
+	background-color: #fff;
+
+	padding: 20px 20px 18px 30px;
+}
+
+#account-detail h6 {
+	margin: 0;
+	padding: 0;
+
+	text-transform: uppercase;
+}
+
+#account-detail h2 {
+	margin: 0;
+	padding: 0;
+
+	font-size: 2em;
+	text-transform: uppercase;
+}
+
+#account-detail h3 {
+	margin: 0;
+	padding: 0;
 }
