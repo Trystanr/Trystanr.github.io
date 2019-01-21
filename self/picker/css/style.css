@@ -1,0 +1,207 @@
+* {
+	box-sizing: border-box;
+
+}
+
+body {
+	margin: 0;
+	padding: 0;
+
+	font-family: 'Helvetica Neue LT Com';
+
+	display: flex;
+
+	justify-content: space-around;
+	/*flex-flow: column-reverse;*/
+	align-items: center;
+
+	height: 100vh;
+}
+
+#date-picker {
+	position: fixed;
+	width: 20vw;
+	bottom: 40vh;
+
+	background-color: #fff;
+	box-shadow: 0px 0 12px rgba(0, 0, 0, 0.1);
+	border-radius: 20px;
+
+	padding-top: 20px;
+
+	z-index: 1;
+
+	transition: bottom 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+#date-control {
+	display: flex;
+	justify-content: center;
+
+	margin-top: 40px;
+
+	border-radius: 0 0 20px 20px;
+
+	width: 100%;
+}
+
+#date-confirm {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	padding: 20px 10px;
+
+	background: #DDE7FF;
+	color: #6995FF;
+
+	text-decoration: none;
+	font-weight: bold;
+
+	border-radius: 0 0 0 20px;
+
+	width: 80%;
+}
+
+#date-cancel {
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	padding: 20px 10px;
+
+	background: #cccccc;
+	color: #D04265;
+
+	text-decoration: none;
+	font-weight: bold;
+
+	border-radius: 0 0 20px 0;
+
+	width: 20%;
+}
+
+.picker-hidden {
+	bottom: -40vh !important;
+
+	transition: bottom 0.5s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.main-carousel {
+	width: 100%;
+	position: relative;
+}
+
+
+.carousel-cell {
+	display: flex;
+	height: 40px;
+
+	margin-top: 20px;
+	position: relative;
+	justify-content: center;
+	flex-direction: column;
+	text-align: center;
+
+	width: 19%;
+
+	color: rgba(0, 0, 0, 0.43);
+
+	font-weight: bold;
+
+	background: transparent;
+	transition: background 0.2s ease-in, color 0.2s ease-in;
+}
+
+.carousel-cell.is-selected {
+	background: #DDE7FF;
+	color: #6995FF;
+
+	transition: background 0.2s ease-in, color 0.2s ease-in;
+	border-radius: 10px;
+}
+
+.flickity-prev-next-button {
+	top: 40px;
+}
+
+.flickity-prev-next-button:hover {
+	background-color: #dde7ff;
+}
+
+.flickity-prev-next-button.next {
+	right: 0;
+	border-radius: 10px 0 0 10px;
+}
+
+.flickity-prev-next-button.previous {
+	left: 0;
+	border-radius: 0 10px 10px 0;
+}
+
+.flickity-prev-next-button .arrow {
+    fill: #6995ff;
+}
+
+
+#show-picker {
+	text-align: center;
+	padding: 10px 20px;
+
+	background: #DDE7FF;
+	color: #6995FF;
+
+	text-decoration: none;
+	font-weight: bold;
+
+	margin-bottom: 50px;
+
+	border-radius: 10px;
+
+
+
+}
+
+#picker-result {
+	text-align: center;
+	padding: 10px 20px;
+
+	background: #DDE7FF;
+	color: #6995FF;
+
+	text-decoration: none;
+	font-weight: bold;
+
+
+	border-radius: 10px;
+
+
+	width: 100%;
+}
+
+#control-parent {
+	display: flex;
+	align-self: flex-end;
+
+	flex-direction: column;
+}
+
+@media(max-width: 500px) {
+	#date-picker {
+		bottom: 0;
+		width: 100vw;
+
+		box-shadow: 0px -5px 12px rgba(0, 0, 0, 0.1);
+		border-radius: 20px 20px 0 0;
+	}
+
+	#date-confirm {
+		border-radius: 0;
+	}
+
+	#date-cancel {
+		border-radius: 0;
+	}
+
+	.flickity-prev-next-button {
+		display: none;
+	}
+}
