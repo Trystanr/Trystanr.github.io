@@ -1,0 +1,48 @@
+/* Smartphones (portrait and landscape) */ 
+@media only screen and (min-width : 0px) and (max-width : 700px) {
+	body {
+		margin: 0;
+	}
+
+	#header {
+	    width: 100vw;
+	    margin-left: 0vw;
+	    border-radius: 0;
+	}
+
+	.listBoi:first-of-type {
+	    margin: 0vw;
+	    border-radius: 0;
+	}
+
+	.listBoi {
+		margin: 0;
+	    width: 100vw;
+	    display: block;
+	    float: left;
+	    border-radius: 0;
+	    box-shadow: none;
+	}
+
+	.listBoi li {
+	    padding: 1vh 4vw;
+	}
+}
+
+/*Tablets */
+@media only screen and (min-width : 700px) and (max-width : 1024px) {
+	#header {
+	    width: 70vw;
+	    margin-left: 15vw;
+	}
+
+	.listBoi:first-of-type {
+	    margin-left: 14vw;
+	}
+
+	.listBoi {
+	    width: 35vw;
+	    display: block;
+	    float: left;
+	}
+}

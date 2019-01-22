@@ -1,0 +1,60 @@
+<html>
+
+<head>
+	<title>New Tab</title>
+	<!-- <link rel="shortcut icon" href="img/icn/reindeer.png" type="image/x-icon"> -->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/font-awesome.css">
+    <style>
+    
+    </style>
+</head>
+
+<body>  
+
+    <div id="alertDialog">
+        
+        <p> <span>This is an alert!</span> <a href=#><i class="fa fa-refresh" aria-hidden="false"></i></a> </p>
+    </div>
+
+    <div id="settingsDialog">
+        <h3>Settings</h3>
+        <ul id="channelSettingsList"></ul>
+        <p>Add a channel.</p>
+        <input type="text" name="channelInput" id="channelInput" placeholder="Channel Name">
+        <input type="button" name="channelInputAdd" id="channelInputAdd" value="+">
+        <br>
+        <input type="button" name="channelInputClear" id="channelInputClear" value="Reset My Channels">
+    </div>
+
+    <div id="settings">
+        <a href=#><i class="fa fa-cog" aria-hidden="false" id="settingsIcon"></i></a>
+    </div>
+
+    <div id="header">
+        <h1 id="timedude">00:00</h1>
+        <h2 id="datedude">tuesday, aug 12</h2>
+    </div>
+  
+    <ul class="listBoi" id="hhhList">
+        <li><i class="fa fa-circle-o"></i></li>
+        <li class="loading">
+            <!-- <img src="img/load.gif"> -->
+        </li>
+    </ul>
+
+    <ul class="listBoi" id="twitchList">
+        <li><i class="fa fa-twitch"></i></li>
+        <li class="loading">
+            <!-- <img src="img/15.gif"> -->
+        </li>
+    </ul>
+
+    <script type="text/javascript" src="js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>

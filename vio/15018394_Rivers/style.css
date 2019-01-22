@@ -54,6 +54,8 @@ li {
 	display: block;
 	float: left;
 	width: 16vw;
+
+	margin-left: 30vw;
 }
 
 li:hover {
@@ -82,8 +84,10 @@ a:hover {
 video {
 	margin-top: 10vh;
 	width: 60vw;
-	margin-left: 20vw;
+	margin-left: 15vw;
 	margin-bottom: 10vh;
+
+	padding: 0;
 }
 
 #selected {

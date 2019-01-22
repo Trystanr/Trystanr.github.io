@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<title>Preview and drag and drop</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+	<link rel="stylesheet" href="css/font-awesome.css">
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	
+	<div id="preview-cont">
+		<div id="preview-left">
+
+			<label for="lightswitch1" id="lightswitchprev1"></label>
+			<input type="radio" id="lightswitch1" name="selector"/>
+			<label for="lightswitch2" id="lightswitchprev2"></label>
+			<input type="radio" id="lightswitch2" name="selector"/>
+			<label for="lightswitch3" id="lightswitchprev3"></label>
+			<input type="radio" id="lightswitch3" name="selector"/>
+
+			<!-- <div id="color-list">
+				
+			</div> -->
+			<div id="prev">
+				<div id="prev-clock"></div>
+				<div id="prev-left" class="prev-layout" draggable="true">
+					<span><i class="fa fa-circle-o"></i></span>
+					
+				</div>
+				<div id="prev-right" class="prev-layout" draggable="true">
+					<span><i class="fa fa-twitch"></i></span>
+				</div>
+			</div>
+
+
+		</div>
+		<div id="preview-right"></div>
+	</div>
+	
+	<script src="js/vendor/jquery.js"></script>
+	<script src="js/script.js"></script>
+</body>
+
+</html>

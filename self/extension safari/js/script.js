@@ -1,68 +1,89 @@
-var channelNames = [];
+var channelNames =[
+'kitboga',
+'aureteur',
+'gamesdonequick',
+'aurateur',
+'northernlion',
+'yogscast',
+'loltyler1',
+'drdisrespectlive',
+'witwix',
+'sjin',
+'vinesauce',
+'johnnyboi_i',
+'t90official',
+'sips_',
+'mhwatson',
+'elirymagee'
+];
+
 loadChannelsToArray();
 
 var bMenu = false;
 
 function loadChannelsToArray() {
-	chrome.storage.sync.get('channelNames', function(object) {
-		channelNames = object.channelNames;
+	// chrome.storage.sync.get('channelNames', function(object) {
+	// 	channelNames = object.channelNames;
+
+	// 	loadSettings();
+
+	// });
 
 		loadSettings();
 
-	});
 }
 
 function addChannelToArray(channelName) {
-	var iTemp = [];
+	// var iTemp = [];
 
-	chrome.storage.sync.get('channelNames', function(object) {
+	// chrome.storage.sync.get('channelNames', function(object) {
 
-		if (object.channelNames != undefined) {
-			iTemp = object.channelNames;
-		}
+	// 	if (object.channelNames != undefined) {
+	// 		iTemp = object.channelNames;
+	// 	}
 
-		console.log($.inArray(channelName, iTemp));
-		if ($.inArray(channelName, iTemp) != -1) {
-			console.log("That channel is already in the array!")
-		} else {
-			iTemp.push(channelName);
-		}
+	// 	console.log($.inArray(channelName, iTemp));
+	// 	if ($.inArray(channelName, iTemp) != -1) {
+	// 		console.log("That channel is already in the array!")
+	// 	} else {
+	// 		iTemp.push(channelName);
+	// 	}
 
-		console.log(iTemp);
+	// 	console.log(iTemp);
 
-		chrome.storage.sync.set({ 'channelNames': iTemp }, function() {
-			console.log('Settings saved');
-			showAlert("Channel Added! Refresh to see changes.", true);
-		});
-	});
+	// 	chrome.storage.sync.set({ 'channelNames': iTemp }, function() {
+	// 		console.log('Settings saved');
+	// 		showAlert("Channel Added! Refresh to see changes.", true);
+	// 	});
+	// });
 }
 
 function deleteChannelFromArray(channelIndex) {
-	var iTemp = [];
+	// var iTemp = [];
 
-	chrome.storage.sync.get('channelNames', function(object) {
+	// chrome.storage.sync.get('channelNames', function(object) {
 
-		for (var i = 0; i < object.channelNames.length; i++) {
-			// console.log(object.channelNames[i]);
+	// 	for (var i = 0; i < object.channelNames.length; i++) {
+	// 		// console.log(object.channelNames[i]);
 
-			if (i != channelIndex) {
-				iTemp.push(object.channelNames[i]);
-			}
-		}
+	// 		if (i != channelIndex) {
+	// 			iTemp.push(object.channelNames[i]);
+	// 		}
+	// 	}
 
-		console.log(iTemp);
+	// 	console.log(iTemp);
 
-		chrome.storage.sync.set({ 'channelNames': iTemp }, function() {
-			console.log('Settings saved');
-			showAlert("Channel Deleted! Refresh to see changes.", true);
-		});
-	});
+	// 	chrome.storage.sync.set({ 'channelNames': iTemp }, function() {
+	// 		console.log('Settings saved');
+	// 		showAlert("Channel Deleted! Refresh to see changes.", true);
+	// 	});
+	// });
 }
 
 function clearChannelArray() {
-	chrome.storage.sync.remove('channelNames', function() {
-		console.log('Channels Cleared');
-	});
+	// chrome.storage.sync.remove('channelNames', function() {
+	// 	console.log('Channels Cleared');
+	// });
 }
 
 function loadSettings() {
@@ -284,9 +305,9 @@ window.onload = function() {
 		showAlert(e.contents.quotes[0].quote);
 	});
 
-	chrome.topSites.get( function(mostVisitedURLs) {
-		console.log(mostVisitedURLs);
-	});
+	// chrome.topSites.get( function(mostVisitedURLs) {
+	// 	console.log(mostVisitedURLs);
+	// });
 
 
 	// showAlert("Refresh to see changes", true);
