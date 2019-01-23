@@ -7,7 +7,7 @@ body {
 	margin: 0;
 	padding: 0;
 
-	font-family: 'Helvetica Neue LT Com';
+	font-family: 'Helvetica Neue LT Com', 'Helvetica Neue';
 
 	display: flex;
 
@@ -109,6 +109,7 @@ body {
 
 	background: transparent;
 	transition: background 0.2s ease-in, color 0.2s ease-in;
+	border-radius: 10px;
 }
 
 .carousel-cell.is-selected {
