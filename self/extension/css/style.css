@@ -193,6 +193,7 @@ body {
 	color: rgb(112, 126, 138);
 
 	overflow-y: scroll;
+	overflow-x: hidden;
 }
 
 #settingsDialog h3 {

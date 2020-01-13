@@ -69,7 +69,7 @@ function loadSettings() {
 	channelNames.forEach(function(item) {
 
 
-		$("#channelSettingsList").append("<li>" + item + "<a href='#' class='deleteItem'>x</a>" + "</li>");
+		$("#channelSettingsList").append("<li class='delList'>" + item + "<a href='#' class='deleteItem'>x</a>" + "</li>");
 
 	});
 }
@@ -148,33 +148,81 @@ function buildTwitch(url) {
 	var twitchTemp = "";
 
 
+
 	if (channelNames != undefined) {
 	for (var i = channelNames.length - 1; i >= 0; i--) {
 
-		$.getJSON('https://api.twitch.tv/kraken/streams/' + channelNames[i] + '?client_id=i13gboueps0q51i7hxcglvx7j4ewgf', function(channel) {
+            
+        console.log(channelNames[i]);
 
-			if (channel["stream"] == null) {
-				console.log("Offline");
-			} else {
-				//console.log("Online");
+        var req = "https://api.twitch.tv/helix/streams/?user_login=" + channelNames[i];
 
-				twitchTemp += "<li>";
+        if (req === "https://api.twitch.tv/helix/streams/?user_login=aurateur") {
+        	console.log("exact same");
+        }
+        console.log(typeof(req));
 
-				twitchTemp += "<a href='";
-				twitchTemp += channel["stream"]["channel"]["url"];
+	var XML = new XMLHttpRequest();
 
-				twitchTemp += "' title='";
-				twitchTemp += "Playing " + channel["stream"]["game"];
-				twitchTemp += "'>";
+        // XML.open("GET", "https://api.twitch.tv/helix/streams/?user_login=" + channelNames[i]);
+        // XML.open("GET", "https://api.twitch.tv/helix/streams/?user_login=aurateur");
+        XML.open("GET", req);
+        XML.setRequestHeader('Client-ID', 'i13gboueps0q51i7hxcglvx7j4ewgf');
+        XML.send();
 
-				twitchTemp += channel["stream"]["channel"]["display_name"];
+        XML.onload = function (channel) {
+          console.log(JSON.parse(XML.response));
+          channel = JSON.parse(XML.response);
+          console.log(channel);
 
-				twitchTemp += "</a>";
-				twitchTemp += "</li>";
+          if (channel.data[0] !== undefined) {
+          	if (channel.data[0].type == "live") {
+          		console.log("Online");
 
-			}
-			twitchList.html(twitchTemp);
-		});
+          		twitchTemp += "<li>";
+
+          		twitchTemp += "<a href='";
+          		twitchTemp += "https://www.twitch.tv/"+channelNames[i];
+
+          		twitchTemp += "' title='";
+          		twitchTemp += channel.data[0].title;
+          		twitchTemp += "'>";
+
+          		twitchTemp += channel.data[0].user_name;
+
+          		twitchTemp += "</a>";
+          		twitchTemp += "</li>";
+          	}
+          	twitchList.html(twitchTemp);
+          }
+        }
+
+		// $.getJSON('https://api.twitch.tv/kraken/streams/' + channelNames[i] + '?client_id=i13gboueps0q51i7hxcglvx7j4ewgf', function(channel) {
+		// $.getJSON('https://api.twitch.tv/helix/streams?user_login=' + channelNames[i]+ '?client_id=i13gboueps0q51i7hxcglvx7j4ewgf', function(channel) {
+		// $.getJSON('https://api.twitch.tv/helix/streams', function(channel) {
+
+		// 	if (channel["stream"] == null) {
+		// 		console.log("Offline");
+		// 	} else {
+		// 		console.log("Online");
+
+		// 		twitchTemp += "<li>";
+
+		// 		twitchTemp += "<a href='";
+		// 		twitchTemp += channel["stream"]["channel"]["url"];
+
+		// 		twitchTemp += "' title='";
+		// 		twitchTemp += "Playing " + channel["stream"]["game"];
+		// 		twitchTemp += "'>";
+
+		// 		twitchTemp += channel["stream"]["channel"]["display_name"];
+
+		// 		twitchTemp += "</a>";
+		// 		twitchTemp += "</li>";
+
+		// 	}
+		// 	twitchList.html(twitchTemp);
+		// });
 	};
 	// });
 
@@ -279,10 +327,10 @@ window.onload = function() {
 
 	setInterval(GetClock, 30000);
 
-	$.getJSON("https://quotes.rest/qod", function(e) {
-		console.log(e.contents.quotes[0].quote);
-		showAlert(e.contents.quotes[0].quote);
-	});
+	// $.getJSON("https://quotes.rest/qod", function(e) {
+	// 	console.log(e.contents.quotes[0].quote);
+	// 	showAlert(e.contents.quotes[0].quote);
+	// });
 
 	chrome.topSites.get( function(mostVisitedURLs) {
 		console.log(mostVisitedURLs);
@@ -326,7 +374,7 @@ $(document).on('click', '#refresh-clicker', function() {
 	location.reload();
 });
 
-$(document).on('click', '.deleteItem', function() {
+$("#settingsDialog").on('click', '.deleteItem', function() {
 	// event.stopPropagation();
 	console.log($(this).parent().parent());
 
@@ -335,4 +383,11 @@ $(document).on('click', '.deleteItem', function() {
 	deleteChannelFromArray($("li").index($(this).parent()));
 });
 
+$(document).on("click","#settingsDialog li .deleteItem", function(){
+    console.log("Clicked.");
+});
 
+
+$("#settingsDialog").on("click","li", function(){
+    console.log("Clicked.");
+});
