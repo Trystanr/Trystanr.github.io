@@ -8,12 +8,12 @@ function loadChannelsToArray() {
 		channelNames = object.channelNames;
 
 		loadSettings();
-
 	});
 }
 
 function addChannelToArray(channelName) {
 	var iTemp = [];
+	var bExists = false;
 
 	chrome.storage.sync.get('channelNames', function(object) {
 
@@ -21,18 +21,23 @@ function addChannelToArray(channelName) {
 			iTemp = object.channelNames;
 		}
 
-		console.log($.inArray(channelName, iTemp));
+		// console.log($.inArray(channelName, iTemp));
 		if ($.inArray(channelName, iTemp) != -1) {
-			console.log("That channel is already in the array!")
+			// console.log("That channel is already in the array!");
+			showAlert("That channel has already been added.", false);
+			bExists = true;
 		} else {
 			iTemp.push(channelName);
 		}
 
-		console.log(iTemp);
+		// console.log(iTemp);
 
 		chrome.storage.sync.set({ 'channelNames': iTemp }, function() {
-			console.log('Settings saved');
-			showAlert("Channel Added! Refresh to see changes.", true);
+			// console.log('Settings saved');
+			if (!bExists) {
+				$("#channelSettingsList").append("<li class='delList'>" + channelName + "<a href='#' class='deleteItem'>x</a>" + "</li>");
+				showAlert("Channel Added! Refresh to see changes.", true);
+			}
 		});
 	});
 }
@@ -62,16 +67,19 @@ function deleteChannelFromArray(channelIndex) {
 function clearChannelArray() {
 	chrome.storage.sync.remove('channelNames', function() {
 		console.log('Channels Cleared');
+
+		$("#channelSettingsList li").remove();
+
+		showAlert("Channels Cleared! Refresh to see changes.", true);
 	});
 }
 
 function loadSettings() {
-	channelNames.forEach(function(item) {
-
-
-		$("#channelSettingsList").append("<li class='delList'>" + item + "<a href='#' class='deleteItem'>x</a>" + "</li>");
-
-	});
+	if (channelNames !== undefined) {
+		channelNames.forEach(function(item) {
+			$("#channelSettingsList").append("<li class='delList'>" + item + "<a href='#' class='deleteItem'>x</a>" + "</li>");
+		});
+	}
 }
 
 function toggleSettings() {
@@ -147,88 +155,69 @@ var hhhList = $('#hhhList');
 function buildTwitch(url) {
 	var twitchTemp = "";
 
+	var channelBuilt = "";
+	if (channelNames !== undefined) {
+
+		for (var i = channelNames.length - 1; i >= 0; i--) {
+
+		    if (i==(channelNames.length-1)) {
+				channelBuilt += "?user_login=" + channelNames[i];
+		    } else {
+		    	channelBuilt += "&user_login=" + channelNames[i];
+		    }
+		
+		};
+
+		var req = "https://api.twitch.tv/helix/streams/" + channelBuilt;
+
+		if (req === "https://api.twitch.tv/helix/streams/?user_login=aurateur") {
+			console.log("exact same");
+		}
+
+		var XML = new XMLHttpRequest();
+
+		XML.open("GET", req);
+		XML.setRequestHeader('Client-ID', 'i13gboueps0q51i7hxcglvx7j4ewgf');
+		XML.send();
+
+		XML.onload = function (channel) {
+
+		  	channel = JSON.parse(XML.response);
+		  	console.log(channel);
+
+		  	if (channel.data[0] !== undefined) {
+			  	
+		  		for (var i = 0; i < channel.data.length; i++) {
+		  			// console.log(channel.data[i].user_name);
+
+		  			if (channel.data[0].type == "live") {
+				  		// console.log("Online");
+
+				  		twitchTemp += "<li>";
+
+				  		twitchTemp += "<a href='";
+				  		twitchTemp += "https://www.twitch.tv/"+channelNames[0];
+
+				  		twitchTemp += "' title='";
+				  		twitchTemp += channel.data[i].title;
+				  		twitchTemp += "'>";
+
+				  		twitchTemp += channel.data[i].user_name;
+
+				  		twitchTemp += "</a>";
+				  		twitchTemp += "</li>";
+			  		}
+		  		}
+
+		  		twitchList.html(twitchTemp);
+		  	}
+		}
 
 
-	if (channelNames != undefined) {
-	for (var i = channelNames.length - 1; i >= 0; i--) {
+		var tempChan = "";
 
-            
-        console.log(channelNames[i]);
+		twitchTemp += "<li><i class='fa fa-twitch'></i></li>";
 
-        var req = "https://api.twitch.tv/helix/streams/?user_login=" + channelNames[i];
-
-        if (req === "https://api.twitch.tv/helix/streams/?user_login=aurateur") {
-        	console.log("exact same");
-        }
-        console.log(typeof(req));
-
-	var XML = new XMLHttpRequest();
-
-        // XML.open("GET", "https://api.twitch.tv/helix/streams/?user_login=" + channelNames[i]);
-        // XML.open("GET", "https://api.twitch.tv/helix/streams/?user_login=aurateur");
-        XML.open("GET", req);
-        XML.setRequestHeader('Client-ID', 'i13gboueps0q51i7hxcglvx7j4ewgf');
-        XML.send();
-
-        XML.onload = function (channel) {
-          console.log(JSON.parse(XML.response));
-          channel = JSON.parse(XML.response);
-          console.log(channel);
-
-          if (channel.data[0] !== undefined) {
-          	if (channel.data[0].type == "live") {
-          		console.log("Online");
-
-          		twitchTemp += "<li>";
-
-          		twitchTemp += "<a href='";
-          		twitchTemp += "https://www.twitch.tv/"+channelNames[i];
-
-          		twitchTemp += "' title='";
-          		twitchTemp += channel.data[0].title;
-          		twitchTemp += "'>";
-
-          		twitchTemp += channel.data[0].user_name;
-
-          		twitchTemp += "</a>";
-          		twitchTemp += "</li>";
-          	}
-          	twitchList.html(twitchTemp);
-          }
-        }
-
-		// $.getJSON('https://api.twitch.tv/kraken/streams/' + channelNames[i] + '?client_id=i13gboueps0q51i7hxcglvx7j4ewgf', function(channel) {
-		// $.getJSON('https://api.twitch.tv/helix/streams?user_login=' + channelNames[i]+ '?client_id=i13gboueps0q51i7hxcglvx7j4ewgf', function(channel) {
-		// $.getJSON('https://api.twitch.tv/helix/streams', function(channel) {
-
-		// 	if (channel["stream"] == null) {
-		// 		console.log("Offline");
-		// 	} else {
-		// 		console.log("Online");
-
-		// 		twitchTemp += "<li>";
-
-		// 		twitchTemp += "<a href='";
-		// 		twitchTemp += channel["stream"]["channel"]["url"];
-
-		// 		twitchTemp += "' title='";
-		// 		twitchTemp += "Playing " + channel["stream"]["game"];
-		// 		twitchTemp += "'>";
-
-		// 		twitchTemp += channel["stream"]["channel"]["display_name"];
-
-		// 		twitchTemp += "</a>";
-		// 		twitchTemp += "</li>";
-
-		// 	}
-		// 	twitchList.html(twitchTemp);
-		// });
-	};
-	// });
-
-	var tempChan = "";
-
-	twitchTemp += "<li><i class='fa fa-twitch'></i></li>";
 	}	
 }
 
@@ -269,7 +258,7 @@ function buildReddit() {
 
 				//console.log(post.data.title);
 			} else if (post.data.title.substring(0, 6).toUpperCase() == "[FRESH") {
-				console.log(post.data.title);
+				// console.log(post.data.title);
 
 				//Fresh song bro
 				hhhTemp += "<li>";
@@ -288,8 +277,6 @@ function buildReddit() {
 					hhhTemp += post.data.title.substring(0, 40);
 					hhhTemp += "...";
 				}
-
-
 
 				hhhTemp += "</a>";
 				hhhTemp += "</li>";
@@ -333,7 +320,7 @@ window.onload = function() {
 	// });
 
 	chrome.topSites.get( function(mostVisitedURLs) {
-		console.log(mostVisitedURLs);
+		// console.log(mostVisitedURLs);
 	});
 
 
@@ -352,6 +339,15 @@ $(document).click( function(){
 $('#settingsDialog').click( function(event){
     event.stopPropagation();
     // $('#drop').toggle();
+});
+
+
+$('#channelInput').keyup(function(e){
+    if(e.keyCode == 13)
+    {
+        addChannelToArray($("#channelInput").val());
+		$("#channelInput").val("");
+    }
 });
 
 $("#channelInputAdd").on("click", function() {
@@ -375,12 +371,16 @@ $(document).on('click', '#refresh-clicker', function() {
 });
 
 $("#settingsDialog").on('click', '.deleteItem', function() {
-	// event.stopPropagation();
+	event.stopPropagation();
 	console.log($(this).parent().parent());
 
 	console.log("Index: " + $("li").index($(this).parent()));
 
+
 	deleteChannelFromArray($("li").index($(this).parent()));
+
+	$(this).parent().remove();
+
 });
 
 $(document).on("click","#settingsDialog li .deleteItem", function(){
