@@ -1,39 +1,61 @@
+
 var channelNames = [];
-loadChannelsToArray();
 
 var bMenu = false;
+
+function buildThemes() {
+	console.log(themes);
+
+	var themeArr = '';
+
+	for (var i = 0; i < themes.length; i++) {
+		var themeItem = '<input type="radio" name="radTheme" id="radTheme' +(i+1)+ '" value="' +(i+1)+ '">';
+    	themeItem += '<label for="radTheme' +(i+1)+ '" class="theme-label">';
+
+		for (var n = 0; n < themes[i].colours.length; n++) {
+			
+			themeItem += '<div style="background-color: #'+themes[i].colours[n]+'"></div>';
+		}
+
+		themeItem += "</label>";
+
+		themeArr += themeItem;
+	}
+
+	$("#accordian-theme").append(themeArr);
+}
 
 function loadChannelsToArray() {
 	chrome.storage.sync.get('channelNames', function(object) {
 		channelNames = object.channelNames;
 
-		loadSettings();
+		drawTwitchSettings();
+		buildTwitch();
+		$( "#accordian" ).accordion({
+			heightStyle: "content",
+    		collapsible: true
+    	});
 	});
 }
 
 function addChannelToArray(channelName) {
-	var iTemp = [];
+	var iTempChannels = [];
 	var bExists = false;
 
 	chrome.storage.sync.get('channelNames', function(object) {
 
 		if (object.channelNames != undefined) {
-			iTemp = object.channelNames;
+			iTempChannels = object.channelNames;
 		}
 
-		// console.log($.inArray(channelName, iTemp));
-		if ($.inArray(channelName, iTemp) != -1) {
-			// console.log("That channel is already in the array!");
+		if ($.inArray(channelName, iTempChannels) != -1) {
 			showAlert("That channel has already been added.", false);
 			bExists = true;
 		} else {
-			iTemp.push(channelName);
+			iTempChannels.push(channelName);
 		}
 
-		// console.log(iTemp);
-
-		chrome.storage.sync.set({ 'channelNames': iTemp }, function() {
-			// console.log('Settings saved');
+		chrome.storage.sync.set({ 'channelNames': iTempChannels }, function() {
 			if (!bExists) {
 				$("#channelSettingsList").append("<li class='delList'>" + channelName + "<a href='#' class='deleteItem'>x</a>" + "</li>");
 				showAlert("Channel Added! Refresh to see changes.", true);
@@ -74,7 +96,7 @@ function clearChannelArray() {
 	});
 }
 
-function loadSettings() {
+function drawTwitchSettings() {
 	if (channelNames !== undefined) {
 		channelNames.forEach(function(item) {
 			$("#channelSettingsList").append("<li class='delList'>" + item + "<a href='#' class='deleteItem'>x</a>" + "</li>");
@@ -120,11 +142,6 @@ function showAlert(text, bRefresh = false) {
 
 }
 
-// chrome.storage.sync.set({'channelNames': channelNames}, function() {
-//           // Notify that we saved.
-//           console.log('Settings saved');
-// });
-
 function GetClock() {
 	var d = new Date();
 	var nhour = d.getHours(),
@@ -152,10 +169,11 @@ function getDate() {
 var twitchList = $('#twitchList');
 var hhhList = $('#hhhList');
 
-function buildTwitch(url) {
+function buildTwitch() {
 	var twitchTemp = "";
 
 	var channelBuilt = "";
+	// console.log(channelNames);
 	if (channelNames !== undefined) {
 
 		for (var i = channelNames.length - 1; i >= 0; i--) {
@@ -170,10 +188,6 @@ function buildTwitch(url) {
 
 		var req = "https://api.twitch.tv/helix/streams/" + channelBuilt;
 
-		if (req === "https://api.twitch.tv/helix/streams/?user_login=aurateur") {
-			console.log("exact same");
-		}
-
 		var XML = new XMLHttpRequest();
 
 		XML.open("GET", req);
@@ -183,7 +197,6 @@ function buildTwitch(url) {
 		XML.onload = function (channel) {
 
 		  	channel = JSON.parse(XML.response);
-		  	console.log(channel);
 
 		  	if (channel.data[0] !== undefined) {
 			  	
@@ -308,23 +321,20 @@ function removeClass(elementID, className) {
 
 
 window.onload = function() {
-	buildTwitch("https://api.myjson.com/bins/at057");
-	buildReddit();
 	GetClock();
-
 	setInterval(GetClock, 30000);
 
-	// $.getJSON("https://quotes.rest/qod", function(e) {
-	// 	console.log(e.contents.quotes[0].quote);
-	// 	showAlert(e.contents.quotes[0].quote);
-	// });
+	buildThemes();
+
+	loadChannelsToArray();
+
+	buildReddit();
+
 
 	chrome.topSites.get( function(mostVisitedURLs) {
 		// console.log(mostVisitedURLs);
 	});
 
-
-	// showAlert("Refresh to see changes", true);
 }
 
 $(document).click( function(){
@@ -332,7 +342,6 @@ $(document).click( function(){
    		// toggleSettings();
 	} else {
    		toggleSettings();
-
 	}
 });
 
@@ -390,4 +399,29 @@ $(document).on("click","#settingsDialog li .deleteItem", function(){
 
 $("#settingsDialog").on("click","li", function(){
     console.log("Clicked.");
+});
+
+$("#settingsDialog").on("mouseup",".theme-label", function(){
+
+	console.log("clicked")		
+
+    console.log(((($(this).index())+1)/2)-1);
+
+    var themeIndex = (((($(this).index())+1)/2)-1);
+
+    chrome.storage.sync.set(
+    	{ 	'tabPrefs': {
+    			'theme': themeIndex
+    		}
+    	}
+    );
+
+    setTheme(themeIndex);
+
+
+});
+
+$("#settingsDialog input[type=radio][name=radTheme]").on("change","input", function(){
+
+	console.log("chnages")
 });

@@ -5,12 +5,19 @@
 	<!-- <link rel="shortcut icon" href="img/icn/reindeer.png" type="image/x-icon"> -->
     <meta name="viewport" content="width=device-width,initial-scale=1">
     
+    <!-- <link rel="stylesheet" href="css/jquery-ui.min.css"> -->
+    <!-- <link rel="stylesheet" href="css/jquery-ui.theme.min.css"> -->
+    <link rel="stylesheet" href="css/font-awesome.css">
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/font-awesome.css">
     <style>
     
     </style>
+
+    <script type="text/javascript" src="js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="js/themeScript.js"></script>
+
 </head>
 
 <body>  
@@ -21,13 +28,35 @@
     </div>
 
     <div id="settingsDialog">
-        <h3>Settings</h3>
-        <ul id="channelSettingsList"></ul>
-        <p>Add a Twitch channel.</p>
-        <input type="text" name="channelInput" id="channelInput" placeholder="Channel Name">
-        <input type="button" name="channelInputAdd" id="channelInputAdd" value="+">
-        <br>
-        <input type="button" name="channelInputClear" id="channelInputClear" value="Reset My Channels">
+        <h2>Settings</h2>
+
+        <div id="accordian">
+<!--             <h3>General</h3>
+            <div class="accordian-child">
+                <div>jgvuy</div>
+                <div>jgvuy</div>
+                <div>jgvuy</div>
+                <div>jgvuy</div>
+                <div>jgvuy</div>
+            </div> -->
+
+            <h3>Theme</h3>
+
+            <div class="accordian-child" id="accordian-theme">
+                
+            </div>
+
+            <h3>Twitch</h3>
+            <div class="accordian-child" id="accordian-twitch">
+                <ul id="channelSettingsList"></ul>
+                <p>Add a Twitch channel.</p>
+                <input type="text" name="channelInput" id="channelInput" placeholder="Channel Name">
+                <input type="button" name="channelInputAdd" id="channelInputAdd" value="+">
+                <br>
+                <input type="button" name="channelInputClear" id="channelInputClear" value="Reset My Channels">
+            </div>
+
+        </div>
     </div>
 
     <div id="settings">
@@ -54,6 +83,7 @@
     </ul>
 
     <script type="text/javascript" src="js/vendor/jquery.js"></script>
+    <script type="text/javascript" src="js/vendor/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/script.js"></script>
 </body>
 
