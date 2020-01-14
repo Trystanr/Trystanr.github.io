@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+
+	<body>
+
+		<div id="cont">
+
+			<audio src="click.mp3" id="aud1"></audio>
+			<audio src="click.mp3" id="aud2"></audio>
+			<audio src="click.mp3" id="aud3"></audio>
+			<audio src="click.mp3" id="aud4"></audio>
+			<audio src="click.mp3" id="aud5"></audio>
+			<audio src="click.mp3" id="aud6"></audio>
+			<audio src="click.mp3" id="aud7"></audio>
+			<audio src="click.mp3" id="aud8"></audio>
+
+			<canvas id="tutorial" width="700" height="500"></canvas>
+
+			<button id="btnStart">start</button>
+			<button id="btnDir">change direction</button>
+			<div id="tol">
+				<h3>tolerance</h3>
+				<h4>If flickering, decrease. If missing points, increase.</h4>
+				<button id="btnTolDec">-</button>
+				<label id="labTol">1</label>
+				<button id="btnTolInc">+</button>
+			</div>
+		</div>
+		<script src="js/vendor/jquery.js"></script>
+		<script src="js/script.js"></script>
+	</body>
+
+</html>
