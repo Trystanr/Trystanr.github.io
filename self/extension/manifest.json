@@ -1,7 +1,7 @@
 {
   "name": "Trystan Rivers New Tab",
   "description": "A custom New Tab page by Trystan Rivers",
-  "version": "0.6",
+  "version": "0.7",
   "incognito": "split",
   "chrome_url_overrides": {
     "newtab": "index.html"
